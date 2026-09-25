@@ -1,0 +1,10 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Shared/BuytOi.Gtfs/BuytOi.Gtfs.csproj" />
+    <Project Path="src/Modules/Ingestion/BuytOi.Ingestion/BuytOi.Ingestion.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/BuytOi.Gtfs.Tests/BuytOi.Gtfs.Tests.csproj" />
+    <Project Path="tests/BuytOi.Ingestion.Tests/BuytOi.Ingestion.Tests.csproj" />
+  </Folder>
+</Solution>
