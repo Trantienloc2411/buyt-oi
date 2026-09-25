@@ -1,0 +1,10 @@
+﻿RouteId,RouteNo,RouteVarId,RouteVarName,RouteVarShortName,StartStop,EndStop,Distance_m,Outbound,RunningTime_min
+1,01,1,Lượt đi: Điểm đầu cuối Nguyễn Siêu - Bến xe buýt Chợ Lớn,Bến xe buýt Chợ Lớn,Điểm đầu cuối Nguyễn Siêu,Bến xe buýt Chợ Lớn,8561.0,True,40
+1,01,2,Lượt về: Bến xe buýt Chợ Lớn - Điểm đầu cuối Nguyễn Siêu,Ga Ba Son,Bến xe buýt Chợ Lớn,Điểm đầu cuối Nguyễn Siêu,10753.0,False,40
+178,127,1,Lượt đi: An Thới Đông - Bà Xán,Ngã ba Bà Xán,Ủy ban nhân dân xã An Thới Đông,Ngã ba Bà Xán,18118.0,True,40
+178,127,2,Lượt về: Bà Xán - An Thới Đông,An Thới Đông,Ngã ba Bà Xán,Ủy ban nhân dân xã An Thới Đông,18144.99999999999,False,40
+345,155,1,Lượt đi,Ga Nhà hát Thành phố,Ga Bến Thành,Ga Bến Thành,6535.0,True,30
+404,172,1,Lượt đi: Bến xe Vũng Tàu - Bến xe buýt Sài Gòn,Bến Thành,BẾN XE VŨNG TÀU,Bến xe buýt Sài Gòn,101434.00000000001,True,210
+404,172,2,Lượt về: Bến xe buýt Sài Gòn - Bến xe Vũng Tàu,Bến xe Vũng Tàu,Bến xe buýt Sài Gòn,BẾN XE VŨNG TÀU,101884.0,False,210
+384,MRT1,1,Lượt đi: Bến Thành - Bến xe Suối Tiên,Suối Tiên,Ga Bến Thành,Ga Bến xe Suối Tiên,18894.0,True,29
+384,MRT1,2,Lượt về: Bến xe Suối Tiên - Bến Thành,Bến Thành,Ga Bến xe Suối Tiên,Ga Bến Thành,18890.0,False,29
