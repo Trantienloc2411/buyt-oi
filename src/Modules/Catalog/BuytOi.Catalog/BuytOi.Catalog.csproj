@@ -1,0 +1,6 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+    <ProjectReference Include="../../../Shared/BuytOi.Gtfs/BuytOi.Gtfs.csproj" />
+  </ItemGroup>
+</Project>
