@@ -1,0 +1,10 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <!-- ponytail: workstation GC giữ RAM thấp (~210 MB so với ~415 MB) cho VPS nhỏ; bật lại Server GC nếu cần throughput nhiều core. -->
+    <ServerGarbageCollector>false</ServerGarbageCollector>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" />
+    <ProjectReference Include="../Modules/Catalog/BuytOi.Catalog/BuytOi.Catalog.csproj" />
+  </ItemGroup>
+</Project>
