@@ -680,3 +680,11 @@ dist
 package
 
 # End of https://www.toptal.com/developers/gitignore/api/dotenv,aspnetcore,dotnetcore,node,svelte,csharp
+### BuytOi: dữ liệu crawl không public (xem data/README.md) ###
+/data/*
+!/data/samples/
+!/data/README.md
+
+### Ghi chú riêng cho Claude Code, không public ###
+/Claude.md
+/CLAUDE.md

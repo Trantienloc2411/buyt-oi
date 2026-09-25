@@ -1,0 +1,40 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-dotnet@v6
+        with:
+          global-json-file: global.json
+      - run: dotnet build
+      - run: dotnet test --no-build
+
+  # Dữ liệu crawl đầy đủ không có trong repo → chỉ kiểm tra feed sinh từ data/samples.
+  validate-gtfs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-dotnet@v6
+        with:
+          global-json-file: global.json
+      - run: dotnet run scripts/build-gtfs.cs data/samples artifacts/gtfs
+      - name: gtfs-validator
+        run: |
+          docker run --rm -v "$PWD/artifacts:/work" ghcr.io/mobilitydata/gtfs-validator:8.0.1 \
+            -i /work/gtfs.zip -o /work/validation -c vn
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: gtfs-validation-report
+          path: artifacts/validation
+      - name: Fail on ERROR notices
+        run: |
+          jq -r '.notices[] | "\(.severity)\t\(.code)\t\(.totalNotices)"' artifacts/validation/report.json
+          jq -e '[.notices[] | select(.severity == "ERROR")] | length == 0' artifacts/validation/report.json

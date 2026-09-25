@@ -1,0 +1,206 @@
+﻿StopId,Code,Name,StopType,Zone,Ward,AddressNo,Street,SupportDisability,Status,Lat,Lng,Routes
+9742,BX 01-1,Điểm đầu cuối Nguyễn Siêu,Bến xe,Quận 1,Phường Bến Nghé,Đối diện The Nexus,Nguyễn Siêu,Có,Đang khai thác,10.779948,106.7064,01
+1192,Q1 030,Ngô Văn Năm,Trụ dừng,Quận 1,,3C,Tôn Đức Thắng,,Đang khai thác,10.779807,106.707609,"01, 53, 56, 88"
+7677,Q1 025,Bảo tàng Tôn Đức Thắng,Nhà chờ,Quận 1,Phường Bến Nghé,số 5B (The Landmarrk),Tôn Đức Thắng,,Đang khai thác,10.777694,106.707045,"01, 53, 56, 88"
+79,Q1 031,Bến Bạch Đằng,Trụ dừng,Quận 1,,21,Tôn Đức Thắng,,Đang khai thác,10.773299,106.706359,"01, 03, 19, 45, 53, 56, 88, DL01"
+76,Q1 020,Cục Hải Quan Thành Phố,Nhà chờ,Quận 1,Phường Bến Nghé,2-4,Hàm Nghi,,Đang khai thác,10.770885,106.705549,"01, 03, 19, 45, 53, 56, 88"
+3691,Q1 193,Chợ Cũ,Nhà chờ,Quận 1,Phường Bến Nghé,84,Hàm Nghi,,Đang khai thác,10.771006,106.703108,"01, 03, 19, 45, 53, 56, 86, 88"
+2028,Q1 194,Trường Cao Thắng,Nhà chờ,Quận 1,Phường Bến Nghé,Trường Cao Thắng,Hàm Nghi,,Đang khai thác,10.771043,106.701853,"01, 03, 102, 172, 19, 20, 34, 38, 39, 45, 56, 65, 72-2B, 75, 86, 88, D4"
+4223,Q1 102,Trạm Trung chuyển trên đường Hàm Nghi,Nhà chờ,Quận 1,Phường Bến Thành,Hàm Nghi 4,Hàm Nghi,,Đang khai thác,10.771043,106.699514,"01, 102, 44, 65, 86"
+120,Q1 124,Trường Ernst Thalmann,Nhà chờ,Quận 1,,8,Trần Hưng Đạo,,Đang khai thác,10.768772,106.695923,"01, 139, 28, 45, 69, 75, DL03"
+121,Q1 125,KTX Trần Hưng Đạo,Nhà chờ,Quận 1,,10,Trần Hưng Đạo,,Đang khai thác,10.767363,106.694695,"01, 139, 152, 45, 56, DL03"
+122,Q1 126,Rạp Hưng Đạo,Nhà chờ,Quận 1,,112,Trần Hưng Đạo,,Đang khai thác,10.765832,106.693375,"01, 139, 152, 45, 56, DL03"
+123,Q1 127,Bệnh viện Răng Hàm Mặt,Nhà chờ,Quận 1,,150,Trần Hưng Đạo,,Đang khai thác,10.763918,106.691696,"01, 139, 152, DL03"
+124,Q1 128,Trần Đình Xu,Trụ dừng,Quận 1,,210 - 212,Trần Hưng Đạo,,Đang khai thác,10.762262,106.690247,"01, 139, 152, DL03"
+125,Q1 129,Tổng Cty Samco,Nhà chờ,Quận 1,,262,Trần Hưng Đạo,,Đang khai thác,10.759409,106.687798,"01, 139, 152, DL03"
+126,Q1 130,Chợ Nanci,Trụ dừng,Quận 1,,290-292-292A,Trần Hưng Đạo,,Đang khai thác,10.757467,106.686035,"01, 139, 152, DL03"
+127,Q5 083,Nguyễn Biểu,Trụ dừng,Quận 5,,454,Trần Hưng Đạo,,Đang khai thác,10.755887,106.68283,"01, DL03"
+128,Q5 084,Trường Cao đẳng Kinh tế Đối ngoại,Nhà chờ,Quận 5,,520,Trần Hưng Đạo,,Đang khai thác,10.755623,106.681833,"01, DL03"
+129,Q5 085,Trần Bình Trọng,Trụ dừng,Quận 5,,560(564),Trần Hưng Đạo,,Đang khai thác,10.755064,106.679794,"01, DL03"
+130,Q5 086,Bệnh viện Chấn thương Chỉnh hình,Nhà chờ,Quận 5,,696,Trần Hưng Đạo,,Đang khai thác,10.754537,106.677847,"01, DL03"
+131,Q5 087,Rạp Đồng Tháp,Trụ dừng,Quận 5,,780,Trần Hưng Đạo,,Đang khai thác,10.753984,106.675825,"01, DL03"
+134,Q5 088,Rạp Đống Đa,Trụ dừng,Quận 5,,882,Trần Hưng Đạo,,Đang khai thác,10.753573,106.674237,"01, DL03"
+132,Q5 089,Đồng Khánh,Trụ dừng,Quận 5,,18,Trần Hưng Đạo,,Đang khai thác,10.752983,106.67149,"01, DL03"
+14,Q5 099,Nhà Văn hóa Quận 5,Trụ dừng,Quận 5,,388,Trần Phú,,Đang khai thác,10.753025,106.668588,"01, 59, DL03"
+136,Q5 090,Ngô Quyền,Biển treo,Quận 5,,212,Trần Hưng Đạo,,Đang khai thác,10.752477,106.666174,01
+133,Q5 091,Tản Đà,Trụ dừng,Quận 5,,274,Trần Hưng Đạo,,Đang khai thác,10.752292,106.663706,"01, DL03"
+135,Q5 092,Triệu Quang Phục,Trụ dừng,Quận 5,Phường 11,390,Trần Hưng Đạo,,Đang khai thác,10.75206,106.660536,"01, DL03"
+137,Q5 014,Bưu điện Quận 5,Ô sơn,Quận 5,,13-15,Châu Văn Liêm,,Đang khai thác,10.751381,106.658894,"01, 07, 08, 10, 45, 56, 62, DL03"
+138,Q5 015,Hải Thượng Lãn Ông,Trụ dừng,Quận 5,,210-212,Hải Thượng Lãn Ông,,Đang khai thác,10.750948,106.658358,"01, 07, 10, 25, 39, 47, 56, DL03"
+139,Q5 102,Chợ Kim Biên,Trụ dừng,Quận 5,,5,Trang Tử,,Đang khai thác,10.751128,106.655086,"01, 07, 10, 25, 39, 47, 56, DL03"
+8,BX14,Bến xe buýt Chợ Lớn,Bến xe,Quận 5,,GA HKXB CHO LON,Lê Quang Sung,,Đang khai thác,10.751253,106.652565,"01, 05, 06, 07, 09, 150, 23, 47, 56, 62-1, 62-10, 62-7, 62-8, 81, 94"
+2393,Q6 096,Tháp Mười,Trụ dừng,Quận 6,,13C-13D,Tháp Mười,,Đang khai thác,10.750326,106.653036,"01, 05, 10, 25, 39, 47, 91, DL03"
+2,Q5 016,Chợ Kim Biên,Trụ dừng,Quận 5,,11-12,Hải Thượng Lãn Ông,,Đang khai thác,10.750732,106.655075,"01, 07, 10, 25, 39, 47, 56, DL03"
+3,Q5 011,Bưu điện Quận 5,Ô sơn,Quận 5,,14-16,Châu Văn Liêm,,Đang khai thác,10.751368,106.659203,"01, 07, 08, 10, 45, 56, 62, DL03"
+5,Q5 012,Rạp Đại Quang,Nhà chờ,Quận 5,,68,Châu Văn Liêm,,Đang khai thác,10.752566,106.658937,"01, 07, 08, 10, 45, 56, 62, DL03"
+4,Q5 055,Lương Nhữ Học,Trụ dừng,Quận 5,,727,Nguyễn Trãi,,Đang khai thác,10.752962,106.660418,"01, 91, DL03"
+7,Q5 056,Triệu Quang Phục,Trụ dừng,Quận 5,,695,Nguyễn Trãi,,Đang khai thác,10.753088,106.662081,"01, 91, DL03"
+9,Q5 057,Đại học Sư phạm Thể dục thể thao,Nhà chờ,Quận 5,,639,Nguyễn Trãi,,Đang khai thác,10.753341,106.663486,"01, 91"
+12,Q5 058,Siêu thị Điện máy Chợ Lớn,Trụ dừng,Quận 5,,635B,Nguyễn Trãi,,Đang khai thác,10.753626,106.664913,"01, 91, DL03"
+6,Q5 059,Ngô Quyền,Trụ dừng,Quận 5,,593,Nguyễn Trãi,,Đang khai thác,10.754,106.666882,"01, 91, DL03"
+10,Q5 060,Chung cư Nguyễn Trãi,Trụ dừng,Quận 5,,549,Nguyễn Trãi,,Đang khai thác,10.754337,106.668572,"01, 91, DL03"
+3166,Q5 061,Bệnh viện Nguyễn Tri Phương,Nhà chờ,Quận 5,,493,Nguyễn Trãi,,Đang khai thác,10.754638,106.670149,"01, 68, 91"
+3519,Q5 062,Trần Phú,Ô sơn,Quận 5,,467-469,Nguyễn Trãi,,Đang khai thác,10.755212,106.673014,"01, 68"
+3521,Q5 063,Bệnh viện Nguyễn Trãi,Trụ dừng,Quận 5,,331-333,Nguyễn Trãi,,Đang khai thác,10.755839,106.675084,"01, 68"
+15,Q5 096,Bệnh viện Chấn Thương Chỉnh hình,Nhà chờ,Quận 5,,929,Trần Hưng Đạo,,Đang khai thác,10.754421,106.678271,01
+19,Q5 097,Trần Bình Trọng,Trụ dừng,Quận 5,,813,Trần Hưng Đạo,,Đang khai thác,10.754912,106.680041,01
+20,Q5 098,Nguyễn Biểu,Trụ dừng,Quận 5,,651,Trần Hưng Đạo,,Đang khai thác,10.756066,106.68437,01
+18,Q1 131,Chợ Nanci,Trụ dừng,Quận 1,,559-561,Trần Hưng Đạo,,Đang khai thác,10.75699,106.685883,"01, 139, 152, DL03"
+22,Q1 132,Tổng Cty Samco,Nhà chờ,Quận 1,,393 bis,Trần Hưng Đạo,,Đang khai thác,10.759734,106.688254,"01, 139, 152, DL03"
+21,Q1 133,Sở PCCC,Nhà chờ,Quận 1,,359,Trần Hưng Đạo,,Đang khai thác,10.760656,106.689096,"01, 139, 152, DL03"
+23,Q1 134,Hồ Hảo Hớn,Trụ dừng,Quận 1,,301F,Trần Hưng Đạo,,Đang khai thác,10.762395,106.690636,"01, 139, 152, DL03"
+24,Q1 135,Bệnh Viện Răng Hàm Mặt,Nhà chờ,Quận 1,Phường Cô Giang,263,Trần Hưng Đạo,,Đang khai thác,10.763567,106.691612,"01, 139, 152, DL03"
+25,Q1 136,Rạp Trần Hữu Trang,Nhà chờ,Quận 1,Phường Cô Giang,227 - 229 (255),Trần Hưng Đạo,,Đang khai thác,10.76483,106.692722,"01, 139, 152, DL03"
+26,Q1 137,KTX Trần Hưng Đạo,Nhà chờ,Quận 1,Phường Cầu Ông Lãnh,135,Trần Hưng Đạo,,Đang khai thác,10.767064,106.694824,"01, 139, 152, 45, 53, 56, 75, 86, 88"
+27,Q1 138,Nguyễn Kim,Nhà chờ,Quận 1,,71C,Trần Hưng Đạo,,Đang khai thác,10.768327,106.695847,"01, 102, 152, 31, 38, 45, 53, 56, 75, 86, 88"
+7266,Q1 180,Trạm Trung chuyển trên đường Hàm Nghi,Nhà chờ,Quận 1,Phường Nguyễn Thái Bình,Hàm Nghi 7,Hàm Nghi,Có,Đang khai thác,10.770896,106.700807,"01, 04, 19, 56, 88"
+7693,Q1 1950,Nam Kỳ Khởi Nghĩa,Nhà chờ,Quận 1,Phường Nguyễn Thái Bình,93-95,Hàm Nghi,Có,Đang khai thác,10.770875,106.701354,"01, 03, 04, 109, 152, 155, 18, 19, 20, 31, 36, 45, 52, 53, 56, 75, 88, 93"
+7588,Q1 200,Giao lộ Hàm Nghi - Tôn Thất Đạm,Nhà chờ,Quận 1,Phường Nguyễn Thái Bình,81-83-83B,Hàm Nghi,,Đang khai thác,10.77078,106.703038,"01, 03, 19, 20, 45, 53, 56, 75, 88"
+32,Q1 017,Hồ Tùng Mậu,Nhà chờ,Quận 1,Phường Nguyễn Thái Bình,67,Hàm Nghi,,Đang khai thác,10.770722,106.704074,"01, 03, 19, 20, 45, 53, 56, 75, 88, DL06"
+31,Q1 024,Bến Bạch Đằng,Nhà chờ,Quận 1,,Bến thủy nội địa Thủ Thiêm,Tôn Đức Thắng,,Đang khai thác,10.774094,106.706654,"01, 03, 19, 45, 53, 56, 88, DL01, DL02, DL05, DL06"
+1092,Q1 0250,Bảo tàng Tôn Đức Thắng,Nhà chờ,Quận 1,Phường Bến Nghé,Đối diện số 1A (đối diện Doanh trại Quân đội),Tôn Đức Thắng,,Đang khai thác,10.776845,106.70696,"01, 53, 56, 88"
+1094,Q1 027,Ba Son,Ô sơn,Quận 1,,2,Tôn Đức Thắng,,Đang khai thác,10.781804,106.706922,"01, 44, 53, 56, 88"
+1095,Q1 028,TTTM Sài Gòn,Nhà chờ,Quận 1,,6,Tôn Đức Thắng,,Đang khai thác,10.784286,106.704363,"01, 30, 44, DL01"
+1189,Q1 029,TTTM Sài Gòn,Ô sơn,Quận 1,,35,Tôn Đức Thắng,,Đang khai thác,10.783838,106.704336,"01, 44"
+7803,Q1 026,Ba Son,Ô sơn,Quận 1,Phường Bến Nghé,Đối diện số 2,Tôn Đức Thắng,Có,Đang khai thác,10.781625,106.706815,"01, 44, 53, 56, 88"
+35,BX 01,Bến xe buýt Sài Gòn,Bến xe,Quận 1,Phường Phạm Ngũ Lão,BẾN XE BUÝT SÀI GÒN,Lê Lai,Có,Đang khai thác,10.767676,106.689362,"03, 04, 102, 109, 13, 140, 171, 172, 18, 19, 20, 27, 28, 34, 36, 39, 52, 65, 69, 72, 75, 86, 88, 93, D4, DL01, DL02, DL03, DL04, DL05, DL06"
+7276,Q1 190,Khách sạn Viễn Đông,Trụ dừng,Quận 1,Phường Phạm Ngũ Lão,277-279-275Y,Phạm Ngũ Lão,Có,Đang khai thác,10.76767,106.690941,"03, 04, 102, 109, 13, 140, 156V, 171, 172, 18, 19, 20, 28, 34, 36, 39, 46, 52, 65, 69, 72, 72-2B, 75, 86, 88, 93, D4, DL01, DL02, DL03"
+7277,Q1 191,Sân khấu Sen Hồng,Trụ dừng,Quận 1,Phường Phạm Ngũ Lão,187,Phạm Ngũ Lão,Có,Đang khai thác,10.768788,106.693699,"03, 04, 102, 109, 13, 140, 156V, 171, 172, 18, 19, 20, 28, 34, 36, 39, 46, 52, 65, 69, 72, 72-2B, 93, D4, DL01, DL02, DL03, DL05, DL06"
+7278,Q1 192,Trường Emst Thalmann,Nhà chờ,Quận 1,Phường Phạm Ngũ Lão,Trường Emst Thalmann,Phạm Ngũ Lão,Có,Đang khai thác,10.769504,106.695587,"03, 04, 109, 13, 156V, 171, 172, 18, 19, 20, 28, 34, 36, 39, 52, 65, 69, 72-2B, 93, D4, DL01, DL02, DL03"
+7265,Q1 179,Trạm Trung chuyển trên đường Hàm Nghi,Nhà chờ,Quận 1,Phường Nguyễn Thái Bình,Hàm nghi 5,Hàm Nghi,Có,Đang khai thác,10.770911,106.700259,"03, 155, 45, 53"
+1256,Q1 195,Chợ Cũ,Nhà chờ,Quận 1,Phường Nguyễn Thái Bình,89A,Hàm Nghi,,Đang khai thác,10.770811,106.701998,"03, 04, 109, 152, 155, 18, 19, 20, 31, 36, 45, 52, 53, 56, 75, 86, 88, 93"
+7270,Q1 184,Trạm Trung chuyển trên đường Hàm Nghi,Nhà chờ,Quận 1,Phường Bến Thành,Hàm Nghi 6,Hàm Nghi,Có,Đang khai thác,10.771096,106.699948,"03, 172, 53, 72-2B, D4"
+7273,Q1 187,Khách sạn New World,Nhà chờ,Quận 1,Phường Bến Thành,Số 76,Lê Lai,Có,Đang khai thác,10.770964,106.695946,"03, 04, 102, 109, 171, 172, 18, 19, 20, 34, 36, 39, 52, 53, 72-2B, 86, 88, 93, D4, DL01, DL03"
+7274,Q1 188,Sân khấu Sen Hồng,Trụ dừng,Quận 1,Phường Bến Thành,94-96,Lê Lai,Có,Đang khai thác,10.769952,106.693495,"03, 04, 102, 109, 13, 140, 156D, 171, 172, 18, 19, 20, 34, 36, 39, 52, 53, 69, 72, 72-2B, 75, 86, 88, 93, D4, DL01, DL03"
+7275,Q1 189,Tôn Thất Tùng,Trụ dừng,Quận 1,Phường Bến Thành,202-204,Lê Lai,Có,Đang khai thác,10.768761,106.690469,"03, 04, 102, 109, 13, 140, 156D, 171, 172, 18, 19, 20, 34, 36, 39, 52, 53, 69, 72, 72-2B, 75, 86, 88, 93, D4, DL01, DL03"
+4271,Q1 078,"Đền Thờ Ấn Giáo, Pasteur",Nhà chờ,Quận 1,,Đền Thờ Ấn Giáo,Pasteur,,Đang khai thác,10.773595,106.70139,"04, 109, 152, 155, 171, 18, 31, 36, 52, 93"
+1451,Q1 118,Trần Hưng Đạo,Trụ dừng,Quận 1,,197,Nguyễn Thái Học,,Đang khai thác,10.768461,106.694984,"102, 140, 152, 155, 31, 38, 46, 56, 72"
+7564,Q1 196,Bảo tàng Mỹ Thuật,Trụ dừng,Quận 1,Phường Bến Nghé,56,Nguyễn Thái Bình,Có,Đang khai thác,10.769251,106.699669,"102, 172, 34, 38, 39, 72-2B, 86, D4"
+851,Q4 007,Đoàn Văn Bơ,Trụ dừng,Quận 4,,106-108,Hoàng Diệu,,Đang khai thác,10.763744,106.704031,"102, 155, 20, 31, 34, 75"
+6860,BX 84,Ủy ban nhân dân xã An Thới Đông,Bến xe,Huyện Cần Giờ,Xã An Thới Đông,Ủy ban nhân dân xã An Thới Đông,An Thới Đông,,Đang khai thác,10.591123,106.788638,127
+6864,HCG 043,Trường tiểu học An Thới Đông,Nhà chờ,Huyện Cần Giờ,Xã An Thới Đông,Trường tiểu học An Thới Đông,An Thới Đông,Có,Đang khai thác,10.590806,106.792517,127
+7100,HCG 131,Quán Phương Trang,Ô sơn,Huyện Cần Giờ,Xã An Thới Đông,Trụ điện ATĐ 52,An Thới Đông,Có,Đang khai thác,10.590268,106.80133,127
+7098,HCG 129,Rạch Giồng,Ô sơn,Huyện Cần Giờ,Xã An Thới Đông,Đối điện trụ điện ATĐ 43.1,An Thới Đông,Có,Đang khai thác,10.587036,106.803616,127
+6865,HCG 044,Trường Trung học An Thới Đôn,Nhà chờ,Huyện Cần Giờ,Xã An Thới Đông,Đối diện Trường THCS An Thới Đông,An Thới Đông,,Đang khai thác,10.58335,106.805504,127
+7096,HCG 127,An Thới Đông,Ô sơn,Huyện Cần Giờ,Xã An Thới Đông,Đối diện ATĐ 18,An Thới Đông,Có,Đang khai thác,10.576036,106.81708,127
+6866,HCG 045,Rừng Sác,Nhà chờ,Huyện Cần Giờ,Xã An Thới Đông,Đối diện trụ điện TĐ11,An Thới Đông,,Đang khai thác,10.576221,106.824365,127
+6867,HCG 046,Tam Thôn Hiệp,Trụ dừng,Huyện Cần Giờ,Xã Tam Thôn Hiệp,Cửa hàng Kim Nguyên,Tam Thôn Hiệp,Có,Đang khai thác,10.587437,106.825535,"127, 128"
+6868,HCG 047,Trường An Nghĩa,Nhà chờ,Huyện Cần Giờ,Xã Tam Thôn Hiệp,Đối diện Trường THPT An Nghĩa,Tam Thôn Hiệp,Có,Đang khai thác,10.588829,106.830411,127
+7094,HCG 125,Tam Thôn Hiệp,Ô sơn,Huyện Cần Giờ,Xã Tam Thôn Hiệp,TTH 19,Tam Thôn Hiệp,Có,Đang khai thác,10.587305,106.833785,127
+7092,HCG 123,Thuận Yến,Ô sơn,Huyện Cần Giờ,Xã Tam Thôn Hiệp,Đối diện HTX Thuận Yến,Tam Thôn Hiệp,Có,Đang khai thác,10.588154,106.837851,127
+6869,HCG 048,Đê An Hòa,Trụ dừng,Huyện Cần Giờ,Xã Tam Thôn Hiệp,Đối diện ngã 3 Đê An Hòa,Tam Thôn Hiệp,Có,Đang khai thác,10.587632,106.845195,127
+7090,HCG 121,Đê N1,Ô sơn,Huyện Cần Giờ,Xã Tam Thôn Hiệp,Trụ điện TTH 62.1,Tam Thôn Hiệp,Có,Đang khai thác,10.587785,106.849819,127
+6870,HCG 049,Trường Tam Thôn Hiệp,Trụ dừng,Huyện Cần Giờ,Xã Tam Thôn Hiệp,Đối diện Trường THCS Tam Thôn Hiệp,Tam Thôn Hiệp,Có,Đang khai thác,10.587964,106.854519,127
+7088,HCG 119,Nguyễn Công Bao,Nhà chờ,Huyện Cần Giờ,Xã Tam Thôn Hiệp,Đối diện TH 772,Nguyễn Công Bao,Có,Đang khai thác,10.595847,106.857056,127
+7086,HCG 117,Nguyễn Công Bao 2,Ô sơn,Huyện Cần Giờ,Xã Tam Thôn Hiệp,Trụ điện TH 35,Nguyễn Công Bao,Có,Đang khai thác,10.598304,106.859556,127
+7084,HCG 115,Tam Thôn Hiệp,Ô sơn,Huyện Cần Giờ,Xã Tam Thôn Hiệp,Trụ điện TH2.2,Nguyễn Công Bao,Có,Đang khai thác,10.601874,106.860108,127
+6872,HCG 051,Đình xã Tam Thôn Hiệp,Nhà chờ,Huyện Cần Giờ,Xã Tam Thôn Hiệp,Đình Xã Tam Thôn Hiệp,Tam Thôn Hiệp,Có,Đang khai thác,10.607996,106.859014,127
+6873,HCG 052,Nhà văn hóa Ấp Trần Hưng Đạo,Nhà chờ,Huyện Cần Giờ,Xã Tam Thôn Hiệp,Nhà văn hóa ấp Trần Hưng Đạo,Tam Thôn Hiệp,Có,Đang khai thác,10.618019,106.855913,127
+7082,HCG 113,Cống Hưng Đạo,Nhà chờ,Huyện Cần Giờ,Xã Tam Thôn Hiệp,Trụ điện TTH 125,Tam Thôn Hiệp,Có,Đang khai thác,10.619042,106.852807,127
+6874,HCG 053,Cầu Tắc Tây Đen,Nhà chờ,Huyện Cần Giờ,Xã Tam Thôn Hiệp,Đối diện trụ điện 11,Tam Thôn Hiệp,Có,Đang khai thác,10.618219,106.847556,127
+6875,HCG 054,Bà Xán,Trụ dừng,Huyện Cần Giờ,Xã Bình Khánh,Đối diện trụ diện TĐ39,Bà Xán,Có,Đang khai thác,10.619232,106.842567,127
+7080,HCG 111,Đội 5,Nhà chờ,Huyện Cần Giờ,Xã Bình Khánh,Đối diện trụ điện TĐ 29,Bà Xán,Có,Đang khai thác,10.620445,106.835598,127
+6876,HCG 055,Nghĩa trang Bình Khánh,Trụ dừng,Huyện Cần Giờ,Xã Bình Khánh,Đối diện Nghĩa trang Bình Khánh,Bà Xán,Có,Đang khai thác,10.618219,106.825604,127
+6861,BX 85,Ngã ba Bà Xán,Bến xe,Huyện Cần Giờ,Xã Bình Khánh,Ngã 3 Bà Xán,Bà Xán,,Đang khai thác,10.616538,106.81884,127
+6877,HCG 056,Nghĩa trang Bình Khánh,Trụ dừng,Huyện Cần Giờ,Xã Bình Khánh,Nghĩa trang Bình Khánh,Bà Xán,,Đang khai thác,10.61784,106.825283,127
+7079,HCG 110,Đội 5,Nhà chờ,Huyện Cần Giờ,Xã Bình Khánh,Trụ điện TĐ29,Bà Xán,Có,Đang khai thác,10.620097,106.835368,127
+6878,HCG 057,Bà Xán,Trụ dừng,Huyện Cần Giờ,Xã Bình Khánh,Trụ điện TĐ39,Bà Xán,Có,Đang khai thác,10.61992,106.84104,127
+6879,HCG 058,Cầu Tắc Tây Đen,Nhà chờ,Huyện Cần Giờ,Xã Tam Thôn Hiệp,Trụ điện 11,Tam Thôn Hiệp,Có,Đang khai thác,10.61804,106.847212,127
+7081,HCG 112,Cống Hưng Đạo,Ô sơn,Huyện Cần Giờ,Xã Tam Thôn Hiệp,Đối diện trụ điện TTH 125,Tam Thôn Hiệp,Có,Đang khai thác,10.618831,106.852705,127
+6880,HCG 059,Nhà văn hóa Ấp Trần Hưng Đạo,Nhà chờ,Huyện Cần Giờ,Xã Tam Thôn Hiệp,Đối diện Ấp văn hóa Trần Hưng Đạo,Tam Thôn Hiệp,,Đang khai thác,10.617861,106.855811,127
+6881,HCG 060,Đình xã Tam Thôn Hiệp,Nhà chờ,Huyện Cần Giờ,Xã Tam Thôn Hiệp,Đối diện Đình xã Tam Thôn Hiệp,Tam Thôn Hiệp,,Đang khai thác,10.607532,106.858934,127
+7083,HCG 114,Nguyễn Công Bao,Ô sơn,Huyện Cần Giờ,Xã Tam Thôn Hiệp,Đối diện trụ điện TH 86.4,Nguyễn Công Bao,Có,Đang khai thác,10.601779,106.85998,127
+7085,HCG 116,Nguyễn Công Bao 2,Ô sơn,Huyện Cần Giờ,Xã Tam Thôn Hiệp,Đối diện trụ điện TH35,Nguyễn Công Bao,Có,Đang khai thác,10.598515,106.85955,127
+6883,HCG 062,Trường Trung học Tam Thôn Hiệp,Nhà chờ,Huyện Cần Giờ,Xã Tam Thôn Hiệp,Trường THCS Tam Thôn Hiệp,Tam Thôn Hiệp,,Đang khai thác,10.588138,106.854706,127
+7089,HCG 120,Đường Đê N1,Nhà chờ,Huyện Cần Giờ,Xã Tam Thôn Hiệp,Đối diện TTH 62.1,Tam Thôn Hiệp,Có,Đang khai thác,10.590463,106.856705,127
+6884,HCG 063,Đê An Hòa,Trụ dừng,Huyện Cần Giờ,Xã Tam Thôn Hiệp,Đê An Hòa,Tam Thôn Hiệp,Có,Đang khai thác,10.587806,106.845024,127
+7091,HCG 122,Thuận Yến,Ô sơn,Huyện Cần Giờ,Xã Tam Thôn Hiệp,HTX Thuận Yến,Tam Thôn Hiệp,Có,Đang khai thác,10.588349,106.838012,127
+7093,HCG 124,Tam Thôn Hiệp,Ô sơn,Huyện Cần Giờ,Thị trấn Cần Thạnh,Đối diện TTH 19,Tam Thôn Hiệp,Có,Đang khai thác,10.587505,106.834112,127
+6885,HCG 064,Trường An Nghĩa,Nhà chờ,Huyện Cần Giờ,Xã Tam Thôn Hiệp,Trường THPT An Nghĩa,Tam Thôn Hiệp,Có,Đang khai thác,10.588961,106.830626,127
+6886,HCG 065,Rừng Sác,Trụ dừng,Huyện Cần Giờ,Xã Tam Thôn Hiệp,Đối diện Phúc Hải,Tam Thôn Hiệp,Có,Đang khai thác,10.587579,106.82539,"127, 128"
+6887,HCG 066,An Thới Đông,Nhà chờ,Huyện Cần Giờ,Xã An Thới Đông,Cột điện 3/21,An Thới Đông,Có,Đang khai thác,10.576326,106.824199,127
+7095,HCG 126,An Thới Đông,Nhà chờ,Huyện Cần Giờ,Xã An Thới Đông,Trụ điện ATĐ 18,An Thới Đông,Có,Đang khai thác,10.576205,106.817231,127
+6888,HCG 067,Trường THCS An Thới Đông,Nhà chờ,Huyện Cần Giờ,Xã An Thới Đông,Trường THCS An Thới Đông,An Thới Đông,Có,Đang khai thác,10.583208,106.805778,127
+7097,HCG 128,Rạch Giồng,Ô sơn,Huyện Cần Giờ,Xã An Thới Đông,Trụ đèn ATĐ 43.1,An Thới Đông,Có,Đang khai thác,10.586931,106.803868,127
+7099,HCG 130,Quán Phương Trang,Ô sơn,Huyện Cần Giờ,Xã An Thới Đông,Đối diện trụ điện ATĐ 52,An Thới Đông,Có,Đang khai thác,10.590442,106.801395,127
+6889,HCG 068,Trường tiểu học An Thới Đông,Nhà chờ,Huyện Cần Giờ,Xã An Thới Đông,Đối diện Trường tiểu học An Thới Đông ,An Thới Đông,,Đang khai thác,10.590954,106.793289,127
+1344,Q1 119,Cầu Ông Lãnh,Nhà chờ,Quận 1,Phường Cầu Ông Lãnh,65G (75),Nguyễn Thái Học,Có,Đang khai thác,10.766785,106.696011,"139, 140, 155, 31, 46, 72"
+1196,Q4 010,Hoàng Diệu,Trụ dừng,Quận 4,,K48-K50,Hoàng Diệu,,Đang khai thác,10.760735,106.699836,"139, 140, 155, 38, 46, 72, 86"
+8206,BX95,Ga Bến Thành,Bến xe,Quận 1,Phường Bến Thành,Cây xanh 2-4,Phạm Ngũ Lão,Có,Đang khai thác,10.770021,106.696622,"155, 156D, 156V"
+3011,Q4 017,Chùa Long Bửu,Trụ dừng,Quận 4,,Hông Chùa Long Bửu,Khánh Hội,,Đang khai thác,10.760487,106.697942,"155, 46"
+9579,Q4 060,Tòa Nhà MILLENIUM,Ô sơn,Quận 4,Phường 09,132,Bến Văn Đồn,Có,Đang khai thác,10.763678,106.69954,155
+9580,Q4 063,Novaland Icon 56,Ô sơn,Quận 4,Phường 12,56,Bến Văn Đồn,Có,Đang khai thác,10.766223,106.702607,155
+9550,Q4 059,Trường Nguyễn Hữu Thọ,Ô sơn,Quận 4,Phường 13,02,Bến Vân Đồn,Có,Đang khai thác,10.767899,106.704769,155
+2116,Q4 026,Đại học Luật,Trụ dừng,Quận 4,,8A,Nguyễn Tất Thành,,Đang khai thác,10.767288,106.706032,"155, 20, 75, DL06"
+9553,Q4 061,UBND Phường Xóm Chiếu,Ô sơn,Quận 4,Phường 12,Cây xanh số 24 ,Đoàn Như Hải,Có,Đang khai thác,10.766367,106.705404,"155, DL01, DL02"
+9552,Q4 062,Ngân hàng Agribank,Ô sơn,Quận 4,Phường 13,52 ,Nguyễn Trường Tộ,Có,Đang khai thác,10.765296,106.70485,"155, DL01, DL02"
+2773,Q1 049,Chợ Bến Thành,Nhà chờ,Quận 1,Phường Bến Thành,106,Lê Lợi,,Đang khai thác,10.772661,106.699337,"155, 156D"
+7815,Q2 114,Chung cư NEWCITY,Trụ dừng,TP. Thủ Đức - KV1,Phường Bình Khánh,Cây xanh 379,Mai Chí Thọ,,Đang khai thác,10.780682,106.736367,"157, 172, 72-2B, D4"
+8075,TPTĐ 205,Nút giao Trần Não – Mai Chí Thọ,Nhà chờ,TP. Thủ Đức - KV1,Phường An Lợi Đông,Mai Chí Thọ,Mai Chí Thọ,Có,Đang khai thác,10.776719,106.728634,"157, 172, 72-2B, D4"
+8076,TPTĐ 206,Nút giao Trần Não – Mai Chí Thọ,Nhà chờ,TP. Thủ Đức - KV1,Phường An Lợi Đông,Mai Chí Thọ,Mai Chí Thọ,Có,Đang khai thác,10.776119,106.728908,"157, 172, D4"
+7816,Q2 115,Chung cư NEWCITY,Trụ dừng,TP. Thủ Đức - KV1,Phường Bình Khánh,Cây xanh 372,Mai Chí Thọ,,Đang khai thác,10.779952,106.736406,"157, 172, 72-2B, D4"
+28,Q1 016,Trạm Trung chuyển trên đường Hàm Nghi,Nhà chờ,Quận 1,Phường Nguyễn Thái Bình,Hàm Nghi 9 (129-133),Hàm Nghi,,Đang khai thác,10.770822,106.700233,"171, 172, 72-2B, 75, DL01, DL02"
+7595,VT BX 0001,BẾN XE VŨNG TÀU,Bến xe,Bà Rịa - Vũng Tàu,,Bến xe Vũng Tàu,Nam Kỳ Khởi Nghĩa,Có,Đang khai thác,10.350457,107.086723,"172, 72-1, 72-4"
+9744,VT 0060,Đường Thống Nhất,Trụ dừng,Bà Rịa - Vũng Tàu,,169-171,Lê Hồng Phong,Có,Đang khai thác,10.353256,107.087186,"172, 72-1, 72-4"
+9746,VT 0062,Ngã 5 Ba Cu - Trương Công Định,Trụ dừng,Bà Rịa - Vũng Tàu,,133,Lê Hồng Phong,Có,Đang khai thác,10.35438,107.08574,"172, 72-4"
+8253,VT 0001,CO.OP MART VŨNG TÀU,Ô sơn,Bà Rịa - Vũng Tàu,,CO.OP MART VŨNG TÀU,Nguyễn An Ninh,Có,Đang khai thác,10.367196,107.086209,172
+9784,VT 0100,Trương Văn Bang,Trụ dừng,Bà Rịa - Vũng Tàu,,Đối diện 423,Nguyễn An Ninh,Có,Đang khai thác,10.366701,107.087108,172
+9375,VT 0019,Chung cư Gateway,Ô sơn,Bà Rịa - Vũng Tàu,,Chung cư Gateway,Nguyễn Hữu Cảnh,Có,Đang khai thác,10.376309,107.112981,172
+9376,VT 0020,Đối diện Chung cư Gateway,Ô sơn,Bà Rịa - Vũng Tàu,,Đối diện Chung cư Gateway (Vungtau Seaview 4),Nguyễn Hữu Cảnh,Có,Đang khai thác,10.376367,107.113224,172
+9377,VT 0021,Bệnh viện Vũng Tàu,Nhà chờ,Bà Rịa - Vũng Tàu,,BV Vũng Tàu,2 Tháng 9,Có,Đang khai thác,10.392397,107.128838,172
+9378,VT 0022,Tòa án Nhân dân khu vực 11,Trụ dừng,Bà Rịa - Vũng Tàu,,Đối diện Tòa án Nhân dân khu vực 11,2 Tháng 9,Có,Đang khai thác,10.402884,107.144452,172
+9379,VT 0023,Nút giao Ẹo Ông Từ,Nhà chờ,Bà Rịa - Vũng Tàu,,Nút giao Ẹo Ông Từ,Quốc lộ 51,Có,Đang khai thác,10.42398,107.15852,"172, 72-4"
+9389,VT 0024,Vòng xoay Công viên Hòa Bình,Trụ dừng,Bà Rịa - Vũng Tàu,,Bãi rã xe,Quốc lộ 51,Có,Đang khai thác,10.483279,107.174887,"172, 72-4"
+9371,VT 0015,Trung tâm hành chính BR - VT,Nhà chờ,Bà Rịa - Vũng Tàu,,Trung Tâm Hành Chính BR-VT,Bạch Đằng,Có,Đang khai thác,10.489829,107.179659,"172, 72-4"
+9380,VT 0025,Chợ Bà Rịa,Trụ dừng,Bà Rịa - Vũng Tàu,,Chợ Bà Rịa,Lê Thành Duy,Có,Đang khai thác,10.490335,107.170926,172
+9786,VT 0014-HTBS,Ngã 4 Long Sơn,Ô sơn,Bà Rịa - Vũng Tàu,,UBND xã Tân Hải,Quốc lộ 51,Có,Đang khai thác,10.49932,107.102598,"172, 72-1"
+9390,VT 0026,Chùa Phật Linh,Trụ dừng,Bà Rịa - Vũng Tàu,,Đối diện Chùa Phật Linh,Quốc lộ 51,Có,Đang khai thác,10.51939,107.08492,"172, 72-1"
+9381,VT 0027,Chợ Phước Hòa,Trụ dừng,Bà Rịa - Vũng Tàu,,Đối diện Chợ Phước Hòa,Quốc lộ 51,Có,Đang khai thác,10.53929,107.07333,"172, 72-1"
+9382,VT 0028,Nhà thờ Giáo xứ Phước Lộc,Trụ dừng,Bà Rịa - Vũng Tàu,,Nhà thờ Giáo xứ Phước Lộc,Quốc lộ 51,Có,Đang khai thác,10.552,107.06772,"172, 72-1"
+9383,VT 0029,UBND Phường Tân Phước,Trụ dừng,Bà Rịa - Vũng Tàu,,UBND Phường Tân Phước,Quốc lộ 51,Có,Đang khai thác,10.564557,107.058956,"172, 72-1"
+9384,VT 0030,Nhà thờ Giáo xứ Song Vĩnh,Trụ dừng,Bà Rịa - Vũng Tàu,,Bò sữa 56,Quốc lộ 51,Có,Đang khai thác,10.57272,107.05597,"172, 72-1"
+9385,VT 0031,Siêu thị GO! Phú Mỹ,Trụ dừng,Bà Rịa - Vũng Tàu,,Siêu thị GO! Phú Mỹ,Quốc lộ 51,Có,Đang khai thác,10.58911,107.05525,"172, 72-1"
+9386,VT 0032,Co.opmart Tân Thành,Nhà chờ,Bà Rịa - Vũng Tàu,,Co.opmart Tân Thành,Quốc lộ 51,Có,Đang khai thác,10.59811,107.05474,"172, 72-1"
+9387,VT 0033,Chợ Ngọc Hà,Trụ dừng,Bà Rịa - Vũng Tàu,,Gần ngã 3 QL51 - CMT8,Quốc lộ 51,Có,Đang khai thác,10.60588,107.05494,"172, 72-1"
+9388,VT 0034,Ngã 3 Mỹ Xuân,Trụ dừng,Bà Rịa - Vũng Tàu,,Đối diện chùa Bửu Thiên,Quốc lộ 51,Có,Đang khai thác,10.62414,107.05431,"172, 72-1"
+9787,VT 0003-1,Khu Công nghiệp Mỹ Xuân A,Ô sơn,Bà Rịa - Vũng Tàu,,Hội thánh tin lành,Quốc lộ 51,Có,Đang khai thác,10.650339,107.040888,"172, 72-1"
+3989,Q2 084,Khu đô thị Sala,Nhà chờ,TP. Thủ Đức - KV1,,Đối diện Khu đô thị Sala,Mai Chí Thọ,,Đang khai thác,10.773183,106.721642,"172, 72-2B, D4"
+7805,Q2 111,Trung tâm Quản lý điều hành giao thông đô thị,Nhà chờ,TP. Thủ Đức - KV1,Phường Thủ Thiêm,Cây xanh 17-19,Mai Chí Thọ,Có,Đang khai thác,10.7718,106.71777,"172, 72-2B, D4"
+2888,Q1 168,Chợ Dân Sinh,Trụ dừng,Quận 1,,48 - 50,Ký Con,,Đang khai thác,10.766237,106.699466,"172, 72-2B, D4"
+7567,Q1 199,Sở Giao dịch chứng khoán,Trụ dừng,Quận 1,Phường Bến Nghé,đối diện 162-164,Nguyễn Công Trứ,Có,Đang khai thác,10.76873,106.701504,"172, D4"
+2854,Q1 167,Chợ Dân Sinh,Trụ dừng,Quận 1,,125-127,Ký Con,,Đang khai thác,10.767312,106.698242,"172, 39, 72-2B, D4"
+7804,Q2 110,Trung tâm Quản lý điều hành giao thông đô thị,Nhà chờ,TP. Thủ Đức - KV1,Phường Thủ Thiêm,Cây xanh 24-26,Mai Chí Thọ,,Đang khai thác,10.77113,106.717788,"172, 72-2B, D4"
+4452,Q2 083,Khu đô thị Sala,Nhà chờ,TP. Thủ Đức - KV1,,"Khu đô thị Sala, Mai Chí Thọ, quận2",Mai Chí Thọ,,Đang khai thác,10.773235,106.723509,"172, 72-2B, D4, DL06"
+9359,VT 0003,Khu Công nghiệp Mỹ Xuân A,Trụ dừng,Bà Rịa - Vũng Tàu,,Gần cổng KCN Mỹ Xuân A,Quốc lộ 51,Có,Đang khai thác,10.648217,107.041537,"172, 72-1"
+9361,VT 0004,Khu Công nghiệp Mỹ Xuân A2,Trụ dừng,Bà Rịa - Vũng Tàu,,Thiết kế Quảng cáo Khánh Lê,Quốc lộ 51,Có,Đang khai thác,10.63338,107.04834,"172, 72-1"
+9360,VT 0005,Ngã 3 Mỹ Xuân,Trụ dừng,Bà Rịa - Vũng Tàu,,Điện máy Tín Quang,Quốc lộ 51,Có,Đang khai thác,10.62266,107.05482,"172, 72-1"
+9362,VT 0006,Chợ Ngọc Hà,Trụ dừng,Bà Rịa - Vũng Tàu,,30 Độc Lập,Quốc lộ 51,Có,Đang khai thác,10.60544,107.05457,"172, 72-1"
+9363,VT 0007,Đối diện Co.opmart Tân Thành,Nhà chờ,Bà Rịa - Vũng Tàu,,Chi cục kiểm định Hải Quan khu vực cảng Cái Mép - Thị Vải,Quốc lộ 51,Có,Đang khai thác,10.59774,107.05444,"172, 72-1"
+9364,VT 0008,Trung tâm Văn hóa - Thông tin và thể thao Phú Mỹ,Nhà chờ,Bà Rịa - Vũng Tàu,,Trung tâm Văn hóa - Thông tin và thể thao Phú Mỹ,Quốc lộ 51,Có,Đang khai thác,10.58781,107.05497,"172, 72-1"
+9365,VT 0009,Cây xăng Thanh Lâm,Trụ dừng,Bà Rịa - Vũng Tàu,,Lô A28,Quốc lộ 51,Có,Đang khai thác,10.57708,107.05527,"172, 72-1"
+9366,VT 0010,Chợ Ông Trịnh,Trụ dừng,Bà Rịa - Vũng Tàu,,Nhà thuốc Phương Thảo,Quốc lộ 51,Có,Đang khai thác,10.56353,107.05946,"172, 72-1"
+9367,VT 0011,Trường Trung cấp Kỹ thuật Công nghệ Phước Lộc,Trụ dừng,Bà Rịa - Vũng Tàu,,Trường Trung cấp Kỹ thuật Công nghệ Phước Lộc,Quốc lộ 51,Có,Đang khai thác,10.55142,107.06779,"172, 72-1"
+9368,VT 0012,Chợ Phước Hòa,Trụ dừng,Bà Rịa - Vũng Tàu,,Chợ Phước Hòa,Quốc lộ 51,Có,Đang khai thác,10.53974,107.07292,"172, 72-1"
+9369,VT 0013,Đình thần Phước Hòa,Trụ dừng,Bà Rịa - Vũng Tàu,,Đình thần Phước Hòa,Quốc lộ 51,Có,Đang khai thác,10.51671,107.08659,"172, 72-1"
+9370,VT 0014,Ngã 4 Long Sơn,Trụ dừng,Bà Rịa - Vũng Tàu,,CHXD Láng Cát,Quốc lộ 51,Có,Đang khai thác,10.49957,107.10059,"172, 72-1"
+9700,VT 0035,Bến xe Bà Rịa,Trụ dừng,Bà Rịa - Vũng Tàu,,Chùa Quán Thánh,Quốc lộ 51,Có,Đang khai thác,10.490988,107.168471,"172, 72-1"
+9372,VT 0016,Vòng xoay Công viên Hòa Bình,Trụ dừng,Bà Rịa - Vũng Tàu,,Vòng xoay Công viên Hòa Bình,Quốc lộ 51,Có,Đang khai thác,10.487684,107.174037,"172, 72-4"
+9373,VT 0017,Trạm Ẹo Ông Từ,Ô sơn,Bà Rịa - Vũng Tàu,,18,Quốc lộ 51,Có,Đang khai thác,10.421381,107.158037,"172, 72-1"
+9374,VT 0018,Tòa án Nhân dân khu vực 11,Trụ dừng,Bà Rịa - Vũng Tàu,,989,2 Tháng 9,Có,Đang khai thác,10.402508,107.14359,172
+8256,VT 0002,CO.OP MART VŨNG TÀU,Ô sơn,Bà Rịa - Vũng Tàu,,đối diện Co.op mart,Nguyễn An Ninh,Có,Đang khai thác,10.367314,107.086369,"172, 72-1"
+9745,VT 0061,Ngã 5 Ba Cu - Trương Công Định,Trụ dừng,Bà Rịa - Vũng Tàu,,124,Lê Hồng Phong,Có,Đang khai thác,10.354383,107.085354,"172, 72-4"
+9743,VT 0059,Đường Thống Nhất,Trụ dừng,Bà Rịa - Vũng Tàu,,368,Lê Hồng Phong,Có,Đang khai thác,10.353169,107.087035,"172, 72-4"
+7003,BTN,Ga Bến Thành,Ga Metro Số 1,Quận 1,Phường Bến Thành,Bến Thành,Công trường Quách Thị Trang,Có,Đang khai thác,10.770838,106.697513,MRT1
+7004,OPH,Ga Nhà hát Thành phố,Ga Metro Số 1,Quận 1,Phường Bến Nghé,Nhà hát Thành phố,Đồng Khởi,Có,Đang khai thác,10.775275,106.701976,MRT1
+7005,BSN,Ga Ba Son,Ga Metro Số 1,Quận 1,Phường Bến Nghé,Ba Son,Tôn Đức Thắng,Có,Đang khai thác,10.781556,106.708011,MRT1
+7006,VTP,Ga Văn Thánh,Ga Metro Số 1,Quận Bình Thạnh,Phường 22,Hẻm 56 Điện Biên Phủ,Hẻm 56 Điện Biên Phủ,Có,Chưa khai thác,10.796011,106.715446,MRT1
+7007,TCN,Ga Tân Cảng,Ga Metro Số 1,Quận Bình Thạnh,Phường 25,Công viên Tân Cảng,Điện Biên Phủ,Có,Đang khai thác,10.79854,106.723144,MRT1
+7008,TDN,Ga Thảo Điền,Ga Metro Số 1,TP. Thủ Đức - KV1,Phường Thảo Điền,Thảo Điền,Võ Nguyên Giáp,Có,Đang khai thác,10.800469,106.73361,MRT1
+7009,ANP,Ga An Phú,Ga Metro Số 1,TP. Thủ Đức - KV1,Phường An Phú,An Phú,Võ Nguyên Giáp,Có,Đang khai thác,10.802134,106.74229,MRT1
+7010,RCC,Ga Rạch Chiếc,Ga Metro Số 1,TP. Thủ Đức - KV1,Phường An Phú,Rạch Chiếc,Võ Nguyên Giáp,Có,Đang khai thác,10.808505,106.755261,MRT1
+7011,PCL,Ga Phước Long,Ga Metro Số 1,TP. Thủ Đức - KV3,Phường Trường Thọ,Phước Long,Võ Nguyên Giáp,Có,Đang khai thác,10.821446,106.758179,MRT1
+7012,BTT,Ga Bình Thái,Ga Metro Số 1,TP. Thủ Đức - KV3,Phường Trường Thọ,Bình Thái,Võ Nguyên Giáp,Có,Đang khai thác,10.832647,106.763908,MRT1
+7013,TDC,Ga Thủ Đức,Ga Metro Số 1,TP. Thủ Đức - KV3,Phường Bình Thọ,Thủ Đức,Võ Nguyên Giáp,Có,Đang khai thác,10.846383,106.771633,MRT1
+7016,HTP,Ga Khu Công nghệ Cao,Ga Metro Số 1,TP. Thủ Đức - KV3,Phường Bình Chiểu,Khu Công nghệ Cao,Xa lộ Hà Nội,Có,Đang khai thác,10.858975,106.788837,MRT1
+7014,NUS,Ga Đại học Quốc Gia,Ga Metro Số 1,TP. Thủ Đức - KV3,Phường Linh Trung,Suối Tiên,Xa lộ Hà Nội,Có,Đang khai thác,10.866313,106.801261,MRT1
+7015,STT,Ga Bến xe Suối Tiên,Ga Metro Số 1,TP. Thủ Đức - KV2,Phường Long Bình,Bến xe Suối Tiên,Bến xe Suối Tiên,Có,Đang khai thác,10.879499,106.81406,MRT1

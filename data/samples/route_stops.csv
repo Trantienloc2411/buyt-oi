@@ -1,0 +1,232 @@
+﻿RouteId,RouteNo,RouteVarId,StopOrder,StopId,StopCode,StopName
+1,01,1,1,9742,BX 01-1,Điểm đầu cuối Nguyễn Siêu
+1,01,1,2,1192,Q1 030,Ngô Văn Năm
+1,01,1,3,7677,Q1 025,Bảo tàng Tôn Đức Thắng
+1,01,1,4,79,Q1 031,Bến Bạch Đằng
+1,01,1,5,76,Q1 020,Cục Hải Quan Thành Phố
+1,01,1,6,3691,Q1 193,Chợ Cũ
+1,01,1,7,2028,Q1 194,Trường Cao Thắng
+1,01,1,8,4223,Q1 102,Trạm Trung chuyển trên đường Hàm Nghi
+1,01,1,9,120,Q1 124,Trường Ernst Thalmann
+1,01,1,10,121,Q1 125,KTX Trần Hưng Đạo
+1,01,1,11,122,Q1 126,Rạp Hưng Đạo
+1,01,1,12,123,Q1 127,Bệnh viện Răng Hàm Mặt
+1,01,1,13,124,Q1 128,Trần Đình Xu
+1,01,1,14,125,Q1 129,Tổng Cty Samco
+1,01,1,15,126,Q1 130,Chợ Nanci
+1,01,1,16,127,Q5 083,Nguyễn Biểu
+1,01,1,17,128,Q5 084,Trường Cao đẳng Kinh tế Đối ngoại
+1,01,1,18,129,Q5 085,Trần Bình Trọng
+1,01,1,19,130,Q5 086,Bệnh viện Chấn thương Chỉnh hình
+1,01,1,20,131,Q5 087,Rạp Đồng Tháp
+1,01,1,21,134,Q5 088,Rạp Đống Đa
+1,01,1,22,132,Q5 089,Đồng Khánh
+1,01,1,23,14,Q5 099,Nhà Văn hóa Quận 5
+1,01,1,24,136,Q5 090,Ngô Quyền
+1,01,1,25,133,Q5 091,Tản Đà
+1,01,1,26,135,Q5 092,Triệu Quang Phục
+1,01,1,27,137,Q5 014,Bưu điện Quận 5
+1,01,1,28,138,Q5 015,Hải Thượng Lãn Ông
+1,01,1,29,139,Q5 102,Chợ Kim Biên
+1,01,1,30,8,BX14,Bến xe buýt Chợ Lớn
+1,01,2,1,8,BX14,Bến xe buýt Chợ Lớn
+1,01,2,2,2393,Q6 096,Tháp Mười
+1,01,2,3,2,Q5 016,Chợ Kim Biên
+1,01,2,4,3,Q5 011,Bưu điện Quận 5
+1,01,2,5,5,Q5 012,Rạp Đại Quang
+1,01,2,6,4,Q5 055,Lương Nhữ Học
+1,01,2,7,7,Q5 056,Triệu Quang Phục
+1,01,2,8,9,Q5 057,Đại học Sư phạm Thể dục thể thao
+1,01,2,9,12,Q5 058,Siêu thị Điện máy Chợ Lớn
+1,01,2,10,6,Q5 059,Ngô Quyền
+1,01,2,11,10,Q5 060,Chung cư Nguyễn Trãi
+1,01,2,12,3166,Q5 061,Bệnh viện Nguyễn Tri Phương
+1,01,2,13,3519,Q5 062,Trần Phú
+1,01,2,14,3521,Q5 063,Bệnh viện Nguyễn Trãi
+1,01,2,15,15,Q5 096,Bệnh viện Chấn Thương Chỉnh hình
+1,01,2,16,19,Q5 097,Trần Bình Trọng
+1,01,2,17,20,Q5 098,Nguyễn Biểu
+1,01,2,18,18,Q1 131,Chợ Nanci
+1,01,2,19,22,Q1 132,Tổng Cty Samco
+1,01,2,20,21,Q1 133,Sở PCCC
+1,01,2,21,23,Q1 134,Hồ Hảo Hớn
+1,01,2,22,24,Q1 135,Bệnh Viện Răng Hàm Mặt
+1,01,2,23,25,Q1 136,Rạp Trần Hữu Trang
+1,01,2,24,26,Q1 137,KTX Trần Hưng Đạo
+1,01,2,25,27,Q1 138,Nguyễn Kim
+1,01,2,26,7266,Q1 180,Trạm Trung chuyển trên đường Hàm Nghi
+1,01,2,27,7693,Q1 1950,Nam Kỳ Khởi Nghĩa
+1,01,2,28,7588,Q1 200,Giao lộ Hàm Nghi - Tôn Thất Đạm
+1,01,2,29,32,Q1 017,Hồ Tùng Mậu
+1,01,2,30,31,Q1 024,Bến Bạch Đằng
+1,01,2,31,1092,Q1 0250,Bảo tàng Tôn Đức Thắng
+1,01,2,32,1094,Q1 027,Ba Son
+1,01,2,33,1095,Q1 028,TTTM Sài Gòn
+1,01,2,34,1189,Q1 029,TTTM Sài Gòn
+1,01,2,35,7803,Q1 026,Ba Son
+1,01,2,36,9742,BX 01-1,Điểm đầu cuối Nguyễn Siêu
+178,127,1,1,6860,BX 84,Ủy ban nhân dân xã An Thới Đông
+178,127,1,2,6864,HCG 043,Trường tiểu học An Thới Đông
+178,127,1,3,7100,HCG 131,Quán Phương Trang
+178,127,1,4,7098,HCG 129,Rạch Giồng
+178,127,1,5,6865,HCG 044,Trường Trung học An Thới Đôn
+178,127,1,6,7096,HCG 127,An Thới Đông
+178,127,1,7,6866,HCG 045,Rừng Sác
+178,127,1,8,6867,HCG 046,Tam Thôn Hiệp
+178,127,1,9,6868,HCG 047,Trường An Nghĩa
+178,127,1,10,7094,HCG 125,Tam Thôn Hiệp
+178,127,1,11,7092,HCG 123,Thuận Yến
+178,127,1,12,6869,HCG 048,Đê An Hòa
+178,127,1,13,7090,HCG 121,Đê N1
+178,127,1,14,6870,HCG 049,Trường Tam Thôn Hiệp
+178,127,1,15,7088,HCG 119,Nguyễn Công Bao
+178,127,1,16,7086,HCG 117,Nguyễn Công Bao 2
+178,127,1,17,7084,HCG 115,Tam Thôn Hiệp
+178,127,1,18,6872,HCG 051,Đình xã Tam Thôn Hiệp
+178,127,1,19,6873,HCG 052,Nhà văn hóa Ấp Trần Hưng Đạo
+178,127,1,20,7082,HCG 113,Cống Hưng Đạo
+178,127,1,21,6874,HCG 053,Cầu Tắc Tây Đen
+178,127,1,22,6875,HCG 054,Bà Xán
+178,127,1,23,7080,HCG 111,Đội 5
+178,127,1,24,6876,HCG 055,Nghĩa trang Bình Khánh
+178,127,1,25,6861,BX 85,Ngã ba Bà Xán
+178,127,2,1,6861,BX 85,Ngã ba Bà Xán
+178,127,2,2,6877,HCG 056,Nghĩa trang Bình Khánh
+178,127,2,3,7079,HCG 110,Đội 5
+178,127,2,4,6878,HCG 057,Bà Xán
+178,127,2,5,6879,HCG 058,Cầu Tắc Tây Đen
+178,127,2,6,7081,HCG 112,Cống Hưng Đạo
+178,127,2,7,6880,HCG 059,Nhà văn hóa Ấp Trần Hưng Đạo
+178,127,2,8,6881,HCG 060,Đình xã Tam Thôn Hiệp
+178,127,2,9,7083,HCG 114,Nguyễn Công Bao
+178,127,2,10,7085,HCG 116,Nguyễn Công Bao 2
+178,127,2,11,6883,HCG 062,Trường Trung học Tam Thôn Hiệp
+178,127,2,12,7089,HCG 120,Đường Đê N1
+178,127,2,13,6884,HCG 063,Đê An Hòa
+178,127,2,14,7091,HCG 122,Thuận Yến
+178,127,2,15,7093,HCG 124,Tam Thôn Hiệp
+178,127,2,16,6885,HCG 064,Trường An Nghĩa
+178,127,2,17,6886,HCG 065,Rừng Sác
+178,127,2,18,6887,HCG 066,An Thới Đông
+178,127,2,19,7095,HCG 126,An Thới Đông
+178,127,2,20,6888,HCG 067,Trường THCS An Thới Đông
+178,127,2,21,7097,HCG 128,Rạch Giồng
+178,127,2,22,7099,HCG 130,Quán Phương Trang
+178,127,2,23,6889,HCG 068,Trường tiểu học An Thới Đông
+178,127,2,24,6860,BX 84,Ủy ban nhân dân xã An Thới Đông
+345,155,1,1,8206,BX95,Ga Bến Thành
+345,155,1,2,1451,Q1 118,Trần Hưng Đạo
+345,155,1,3,1344,Q1 119,Cầu Ông Lãnh
+345,155,1,4,1196,Q4 010,Hoàng Diệu
+345,155,1,5,3011,Q4 017,Chùa Long Bửu
+345,155,1,6,9579,Q4 060,Tòa Nhà MILLENIUM
+345,155,1,7,9580,Q4 063,Novaland Icon 56
+345,155,1,8,9550,Q4 059,Trường Nguyễn Hữu Thọ
+345,155,1,9,2116,Q4 026,Đại học Luật
+345,155,1,10,9553,Q4 061,UBND Phường Xóm Chiếu
+345,155,1,11,9552,Q4 062,Ngân hàng Agribank
+345,155,1,12,851,Q4 007,Đoàn Văn Bơ
+345,155,1,13,7265,Q1 179,Trạm Trung chuyển trên đường Hàm Nghi
+345,155,1,14,7693,Q1 1950,Nam Kỳ Khởi Nghĩa
+345,155,1,15,1256,Q1 195,Chợ Cũ
+345,155,1,16,4271,Q1 078,"Đền Thờ Ấn Giáo, Pasteur"
+345,155,1,17,2773,Q1 049,Chợ Bến Thành
+345,155,1,18,8206,BX95,Ga Bến Thành
+404,172,1,1,7595,VT BX 0001,BẾN XE VŨNG TÀU
+404,172,1,2,9744,VT 0060,Đường Thống Nhất
+404,172,1,3,9746,VT 0062,Ngã 5 Ba Cu - Trương Công Định
+404,172,1,4,8253,VT 0001,CO.OP MART VŨNG TÀU
+404,172,1,5,9784,VT 0100,Trương Văn Bang
+404,172,1,6,9375,VT 0019,Chung cư Gateway
+404,172,1,7,9376,VT 0020,Đối diện Chung cư Gateway
+404,172,1,8,9377,VT 0021,Bệnh viện Vũng Tàu
+404,172,1,9,9378,VT 0022,Tòa án Nhân dân khu vực 11
+404,172,1,10,9379,VT 0023,Nút giao Ẹo Ông Từ
+404,172,1,11,9389,VT 0024,Vòng xoay Công viên Hòa Bình
+404,172,1,12,9371,VT 0015,Trung tâm hành chính BR - VT
+404,172,1,13,9380,VT 0025,Chợ Bà Rịa
+404,172,1,14,9786,VT 0014-HTBS,Ngã 4 Long Sơn
+404,172,1,15,9390,VT 0026,Chùa Phật Linh
+404,172,1,16,9381,VT 0027,Chợ Phước Hòa
+404,172,1,17,9382,VT 0028,Nhà thờ Giáo xứ Phước Lộc
+404,172,1,18,9383,VT 0029,UBND Phường Tân Phước
+404,172,1,19,9384,VT 0030,Nhà thờ Giáo xứ Song Vĩnh
+404,172,1,20,9385,VT 0031,Siêu thị GO! Phú Mỹ
+404,172,1,21,9386,VT 0032,Co.opmart Tân Thành
+404,172,1,22,9387,VT 0033,Chợ Ngọc Hà
+404,172,1,23,9388,VT 0034,Ngã 3 Mỹ Xuân
+404,172,1,24,9787,VT 0003-1,Khu Công nghiệp Mỹ Xuân A
+404,172,1,25,7815,Q2 114,Chung cư NEWCITY
+404,172,1,26,8075,TPTĐ 205,Nút giao Trần Não – Mai Chí Thọ
+404,172,1,27,3989,Q2 084,Khu đô thị Sala
+404,172,1,28,7805,Q2 111,Trung tâm Quản lý điều hành giao thông đô thị
+404,172,1,29,2888,Q1 168,Chợ Dân Sinh
+404,172,1,30,7567,Q1 199,Sở Giao dịch chứng khoán
+404,172,1,31,2028,Q1 194,Trường Cao Thắng
+404,172,1,32,7270,Q1 184,Trạm Trung chuyển trên đường Hàm Nghi
+404,172,1,33,7273,Q1 187,Khách sạn New World
+404,172,1,34,7274,Q1 188,Sân khấu Sen Hồng
+404,172,1,35,7275,Q1 189,Tôn Thất Tùng
+404,172,1,36,35,BX 01,Bến xe buýt Sài Gòn
+404,172,2,1,35,BX 01,Bến xe buýt Sài Gòn
+404,172,2,2,7276,Q1 190,Khách sạn Viễn Đông
+404,172,2,3,7277,Q1 191,Sân khấu Sen Hồng
+404,172,2,4,7278,Q1 192,Trường Emst Thalmann
+404,172,2,5,28,Q1 016,Trạm Trung chuyển trên đường Hàm Nghi
+404,172,2,6,7564,Q1 196,Bảo tàng Mỹ Thuật
+404,172,2,7,2854,Q1 167,Chợ Dân Sinh
+404,172,2,8,7804,Q2 110,Trung tâm Quản lý điều hành giao thông đô thị
+404,172,2,9,4452,Q2 083,Khu đô thị Sala
+404,172,2,10,8076,TPTĐ 206,Nút giao Trần Não – Mai Chí Thọ
+404,172,2,11,7816,Q2 115,Chung cư NEWCITY
+404,172,2,12,9359,VT 0003,Khu Công nghiệp Mỹ Xuân A
+404,172,2,13,9361,VT 0004,Khu Công nghiệp Mỹ Xuân A2
+404,172,2,14,9360,VT 0005,Ngã 3 Mỹ Xuân
+404,172,2,15,9362,VT 0006,Chợ Ngọc Hà
+404,172,2,16,9363,VT 0007,Đối diện Co.opmart Tân Thành
+404,172,2,17,9364,VT 0008,Trung tâm Văn hóa - Thông tin và thể thao Phú Mỹ
+404,172,2,18,9365,VT 0009,Cây xăng Thanh Lâm
+404,172,2,19,9366,VT 0010,Chợ Ông Trịnh
+404,172,2,20,9367,VT 0011,Trường Trung cấp Kỹ thuật Công nghệ Phước Lộc
+404,172,2,21,9368,VT 0012,Chợ Phước Hòa
+404,172,2,22,9369,VT 0013,Đình thần Phước Hòa
+404,172,2,23,9370,VT 0014,Ngã 4 Long Sơn
+404,172,2,24,9700,VT 0035,Bến xe Bà Rịa
+404,172,2,25,9371,VT 0015,Trung tâm hành chính BR - VT
+404,172,2,26,9372,VT 0016,Vòng xoay Công viên Hòa Bình
+404,172,2,27,9373,VT 0017,Trạm Ẹo Ông Từ
+404,172,2,28,9374,VT 0018,Tòa án Nhân dân khu vực 11
+404,172,2,29,9375,VT 0019,Chung cư Gateway
+404,172,2,30,9376,VT 0020,Đối diện Chung cư Gateway
+404,172,2,31,8256,VT 0002,CO.OP MART VŨNG TÀU
+404,172,2,32,9745,VT 0061,Ngã 5 Ba Cu - Trương Công Định
+404,172,2,33,9743,VT 0059,Đường Thống Nhất
+404,172,2,34,7595,VT BX 0001,BẾN XE VŨNG TÀU
+384,MRT1,1,1,7003,BTN,Ga Bến Thành
+384,MRT1,1,2,7004,OPH,Ga Nhà hát Thành phố
+384,MRT1,1,3,7005,BSN,Ga Ba Son
+384,MRT1,1,4,7006,VTP,Ga Văn Thánh
+384,MRT1,1,5,7007,TCN,Ga Tân Cảng
+384,MRT1,1,6,7008,TDN,Ga Thảo Điền
+384,MRT1,1,7,7009,ANP,Ga An Phú
+384,MRT1,1,8,7010,RCC,Ga Rạch Chiếc
+384,MRT1,1,9,7011,PCL,Ga Phước Long
+384,MRT1,1,10,7012,BTT,Ga Bình Thái
+384,MRT1,1,11,7013,TDC,Ga Thủ Đức
+384,MRT1,1,12,7016,HTP,Ga Khu Công nghệ Cao
+384,MRT1,1,13,7014,NUS,Ga Đại học Quốc Gia
+384,MRT1,1,14,7015,STT,Ga Bến xe Suối Tiên
+384,MRT1,2,1,7015,STT,Ga Bến xe Suối Tiên
+384,MRT1,2,2,7014,NUS,Ga Đại học Quốc Gia
+384,MRT1,2,3,7016,HTP,Ga Khu Công nghệ Cao
+384,MRT1,2,4,7013,TDC,Ga Thủ Đức
+384,MRT1,2,5,7012,BTT,Ga Bình Thái
+384,MRT1,2,6,7011,PCL,Ga Phước Long
+384,MRT1,2,7,7010,RCC,Ga Rạch Chiếc
+384,MRT1,2,8,7009,ANP,Ga An Phú
+384,MRT1,2,9,7008,TDN,Ga Thảo Điền
+384,MRT1,2,10,7007,TCN,Ga Tân Cảng
+384,MRT1,2,11,7006,VTP,Ga Văn Thánh
+384,MRT1,2,12,7005,BSN,Ga Ba Son
+384,MRT1,2,13,7004,OPH,Ga Nhà hát Thành phố
+384,MRT1,2,14,7003,BTN,Ga Bến Thành
