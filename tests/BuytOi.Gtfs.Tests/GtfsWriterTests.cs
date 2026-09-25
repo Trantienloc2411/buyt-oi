@@ -73,6 +73,38 @@ public sealed class GtfsWriterTests : IDisposable
         Assert.Equal("S1,1,0,0,0,0,0,1,20260222,20261231", Doc("calendar.txt")[1]);
     }
 
+    [Theory]
+    [InlineData(false)]
+    [InlineData(true)]
+    public void Ghi_roi_doc_lai_ra_feed_nhu_cu(bool zip)
+    {
+        var goc = MauFeed([new ShapePoint("SH1", 1, 10.5, 106.5)]);
+        GtfsWriter.Write(goc, _dir);
+        var path = _dir;
+        if (zip)
+        {
+            path = _dir + ".zip";
+            System.IO.Compression.ZipFile.CreateFromDirectory(_dir, path);
+        }
+
+        try
+        {
+            var doc = GtfsReader.Read(path);
+
+            Assert.Equal(goc.Agencies, doc.Agencies);
+            Assert.Equal(goc.Routes, doc.Routes);
+            Assert.Equal(goc.Stops, doc.Stops);
+            Assert.Equal(goc.Trips, doc.Trips);
+            Assert.Equal(goc.StopTimes, doc.StopTimes);
+            Assert.Equal(goc.Calendars, doc.Calendars);
+            Assert.Equal(goc.Shapes, doc.Shapes);
+        }
+        finally
+        {
+            if (zip) File.Delete(path);
+        }
+    }
+
     [Fact]
     public void Co_shape_thi_ghi_shapes_txt()
     {
