@@ -83,7 +83,8 @@ public static class CrawlToGtfs
             }
         }
 
-        var usedStops = variants.Values.SelectMany(v => v.StopIds).ToHashSet();
+        // Chỉ giữ trạm có chuyến đi qua: trạm chỉ thuộc lượt không có lịch chạy sẽ không có stop_times.
+        var usedStops = stopTimes.Select(st => st.StopId).ToHashSet();
         var stops = stopRows.Values
             .Where(s => usedStops.Contains(s["StopId"]))
             .Select(s => new Stop(s["StopId"], s["Code"].Length == 0 ? null : s["Code"], s["Name"],
@@ -91,7 +92,8 @@ public static class CrawlToGtfs
                 s["SupportDisability"] == "Có" ? WheelchairBoarding.Accessible : WheelchairBoarding.Unknown))
             .ToList();
 
-        return new GtfsFeed([.. agencies.Values], routes, stops, trips, stopTimes, [.. calendars.Values], []);
+        return new GtfsFeed([.. agencies.Values], routes, stops, trips, stopTimes, [.. calendars.Values], [],
+            new FeedInfo("Buýt Ơi!", "https://github.com/Trantienloc2411/buyt-oi", "vi"));
     }
 
     /// <summary>"Tên, ĐT: số | Tên 2 | " → thêm các đơn vị vào <paramref name="agencies"/>, trả về id đơn vị đầu tiên.</summary>

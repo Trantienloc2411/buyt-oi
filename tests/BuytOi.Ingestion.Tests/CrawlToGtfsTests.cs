@@ -27,6 +27,7 @@ public sealed class CrawlToGtfsTests
         Assert.Equal(tripIds.Count, Feed.Trips.Count); // trip_id duy nhất (đã ghép RouteId)
         Assert.Equal(tripIds, Feed.StopTimes.Select(st => st.TripId).ToHashSet()); // mọi chuyến đều có stop_times
         Assert.Equal(stopIds, Feed.StopTimes.Select(st => st.StopId).ToHashSet()); // không có trạm thừa
+        Assert.Equal("vi", Feed.FeedInfo?.Lang);
     }
 
     [Fact]

@@ -39,6 +39,12 @@ public static class GtfsWriter
                 Date(c.StartDate), Date(c.EndDate),
             }));
 
+        if (feed.FeedInfo is { } info)
+        {
+            WriteFile(directory, "feed_info.txt", ["feed_publisher_name", "feed_publisher_url", "feed_lang", "feed_version"],
+                [[info.PublisherName, info.PublisherUrl, info.Lang, info.Version]]);
+        }
+
         // shapes.txt là tuỳ chọn: chỉ ghi khi có dữ liệu.
         if (feed.Shapes.Count > 0)
         {

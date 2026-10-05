@@ -40,6 +40,8 @@ public sealed record Calendar(string ServiceId, ServiceDays Days, DateOnly Start
 
 public sealed record ShapePoint(string ShapeId, int Sequence, double Lat, double Lon);
 
+public sealed record FeedInfo(string PublisherName, string PublisherUrl, string Lang, string? Version = null);
+
 public sealed record GtfsFeed(
     IReadOnlyList<Agency> Agencies,
     IReadOnlyList<Route> Routes,
@@ -47,4 +49,5 @@ public sealed record GtfsFeed(
     IReadOnlyList<Trip> Trips,
     IReadOnlyList<StopTime> StopTimes,
     IReadOnlyList<Calendar> Calendars,
-    IReadOnlyList<ShapePoint> Shapes);
+    IReadOnlyList<ShapePoint> Shapes,
+    FeedInfo? FeedInfo = null);

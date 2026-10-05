@@ -56,7 +56,9 @@ public static class GtfsReader
             Rows("calendar.txt").Select(r => new Calendar(
                 r["service_id"], Days(r), Date(r["start_date"]), Date(r["end_date"]))).ToList(),
             Rows("shapes.txt", required: false).Select(r => new ShapePoint(
-                r["shape_id"], Int(r["shape_pt_sequence"]), Double(r["shape_pt_lat"]), Double(r["shape_pt_lon"]))).ToList());
+                r["shape_id"], Int(r["shape_pt_sequence"]), Double(r["shape_pt_lat"]), Double(r["shape_pt_lon"]))).ToList(),
+            Rows("feed_info.txt", required: false).Select(r => new FeedInfo(
+                r["feed_publisher_name"], r["feed_publisher_url"], r["feed_lang"], Opt(r, "feed_version"))).FirstOrDefault());
     }
 
     private static IEnumerable<Dictionary<string, string>> ReadCsv(TextReader reader)
