@@ -6,6 +6,8 @@ public sealed record RouteSummary(string Id, string ShortName, string LongName, 
 
 public sealed record StopInfo(string Id, string? Code, string Name, double Lat, double Lon);
 
+public sealed record NearbyStop(string Id, string? Code, string Name, double Lat, double Lon, int DistanceMeters);
+
 /// <param name="Stops">Trạm theo thứ tự của chuyến có nhiều trạm nhất trong hướng này.</param>
 public sealed record RouteDirection(int DirectionId, string? Headsign, IReadOnlyList<StopInfo> Stops);
 
@@ -29,6 +31,18 @@ public sealed class CatalogSnapshot
     public IReadOnlyList<StopInfo> Stops { get; }
 
     public RouteDetail? Route(string id) => _details.GetValueOrDefault(id);
+
+    /// <summary>Trạm trong bán kính <paramref name="radiusMeters"/>, gần nhất trước.</summary>
+    // ponytail: duyệt hết ~6 000 trạm (vài chục µs); thêm lưới/chỉ mục không gian khi số trạm tăng nhiều.
+    public IReadOnlyList<NearbyStop> Nearby(double lat, double lon, int radiusMeters, int limit) =>
+        Stops
+            .Select(s => (Stop: s, Distance: Geo.DistanceMeters(lat, lon, s.Lat, s.Lon)))
+            .Where(x => x.Distance <= radiusMeters)
+            .OrderBy(x => x.Distance)
+            .Take(limit)
+            .Select(x => new NearbyStop(x.Stop.Id, x.Stop.Code, x.Stop.Name, x.Stop.Lat, x.Stop.Lon,
+                (int)Math.Round(x.Distance)))
+            .ToList();
 
     public static CatalogSnapshot From(GtfsFeed feed)
     {
