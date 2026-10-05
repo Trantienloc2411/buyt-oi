@@ -21,7 +21,8 @@ public sealed class GtfsWriterTests : IDisposable
             new StopTime("172_5", 2, "1192", GtfsTime.FromHm(24, 30), GtfsTime.FromHm(24, 30), Timepoint: false),
         ],
         [new Calendar("S1", ServiceDays.Monday | ServiceDays.Sunday, new DateOnly(2026, 2, 22), new DateOnly(2026, 12, 31))],
-        shapes ?? []);
+        shapes ?? [],
+        new FeedInfo("Buýt Ơi!", "https://github.com/Trantienloc2411/buyt-oi", "vi", "2026-10-05"));
 
     private string[] Doc(string file) => File.ReadAllLines(Path.Combine(_dir, file));
 
@@ -31,7 +32,7 @@ public sealed class GtfsWriterTests : IDisposable
         GtfsWriter.Write(MauFeed(), _dir);
 
         Assert.Equal(
-            ["agency.txt", "calendar.txt", "routes.txt", "stop_times.txt", "stops.txt", "trips.txt"],
+            ["agency.txt", "calendar.txt", "feed_info.txt", "routes.txt", "stop_times.txt", "stops.txt", "trips.txt"],
             Directory.GetFiles(_dir).Select(Path.GetFileName).Order());
         Assert.Equal("stop_id,stop_code,stop_name,stop_lat,stop_lon,wheelchair_boarding", Doc("stops.txt")[0]);
     }
@@ -98,6 +99,7 @@ public sealed class GtfsWriterTests : IDisposable
             Assert.Equal(goc.StopTimes, doc.StopTimes);
             Assert.Equal(goc.Calendars, doc.Calendars);
             Assert.Equal(goc.Shapes, doc.Shapes);
+            Assert.Equal(goc.FeedInfo, doc.FeedInfo);
         }
         finally
         {

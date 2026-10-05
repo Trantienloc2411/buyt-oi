@@ -4,7 +4,12 @@ using BuytOi.Catalog;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddOpenApi();
-builder.Services.ConfigureHttpJsonOptions(o => o.SerializerOptions.Converters.Add(new JsonStringEnumConverter()));
+builder.Services.ConfigureHttpJsonOptions(o =>
+{
+    o.SerializerOptions.Converters.Add(new JsonStringEnumConverter());
+    // Mặc định web cho phép số dạng chuỗi → OpenAPI sinh kiểu `number | string` cho client.
+    o.SerializerOptions.NumberHandling = JsonNumberHandling.Strict;
+});
 // Đường dẫn tương đối tính từ thư mục làm việc (src/BuytOi.Host khi `dotnet run --project`). Deploy: đặt Gtfs__Path.
 builder.Services.AddCatalog(builder.Configuration["Gtfs:Path"] ?? throw new InvalidOperationException("Thiếu cấu hình Gtfs:Path"));
 

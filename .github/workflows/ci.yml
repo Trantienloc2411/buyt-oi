@@ -16,6 +16,22 @@ jobs:
       - run: dotnet build
       - run: dotnet test --no-build
 
+  web:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: web
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+      - run: npm ci
+      - run: npm run check
+      - run: npm run build
+
   # Dữ liệu crawl đầy đủ không có trong repo → chỉ kiểm tra feed sinh từ data/samples.
   validate-gtfs:
     runs-on: ubuntu-latest

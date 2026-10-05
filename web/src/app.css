@@ -1,0 +1,21 @@
+:root {
+  --brand: #0b7a4b;
+  --text: #1a1a1a;
+  --muted: #666;
+  --bg: #fff;
+  --line: #e5e5e5;
+  font-family: 'Be Vietnam Pro', system-ui, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  margin: 0;
+  height: 100%;
+}
