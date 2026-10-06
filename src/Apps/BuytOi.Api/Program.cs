@@ -1,6 +1,7 @@
 using System.Text.Json.Serialization;
 using BuytOi.Catalog.Infrastructure;
 using BuytOi.Gtfs;
+using BuytOi.Routing.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,6 +22,7 @@ app.UseStatusCodePages(); // response lỗi rỗng (vd. 400 do bind tham số) �
 app.MapOpenApi();
 app.MapGet("/health", () => "ok");
 app.MapCatalog();
+app.MapJourneyPlanner();
 
 app.Run();
 
@@ -30,4 +32,5 @@ static void AddModules(IServiceCollection services, string feedPath)
 {
     var feed = GtfsReader.Read(feedPath);
     services.AddCatalog(feed);
+    services.AddJourneyPlanner(feed);
 }

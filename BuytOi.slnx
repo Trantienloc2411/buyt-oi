@@ -12,6 +12,12 @@
   <Folder Name="/src/Modules/Ingestion/">
     <Project Path="src/Modules/Ingestion/BuytOi.Ingestion.Infrastructure/BuytOi.Ingestion.Infrastructure.csproj" />
   </Folder>
+  <Folder Name="/src/Modules/Routing/">
+    <Project Path="src/Modules/Routing/BuytOi.Routing.Contracts/BuytOi.Routing.Contracts.csproj" />
+    <Project Path="src/Modules/Routing/BuytOi.Routing.Domain/BuytOi.Routing.Domain.csproj" />
+    <Project Path="src/Modules/Routing/BuytOi.Routing.Application/BuytOi.Routing.Application.csproj" />
+    <Project Path="src/Modules/Routing/BuytOi.Routing.Infrastructure/BuytOi.Routing.Infrastructure.csproj" />
+  </Folder>
   <Folder Name="/src/Shared/">
     <Project Path="src/Shared/BuytOi.Gtfs/BuytOi.Gtfs.csproj" />
   </Folder>
@@ -20,5 +26,6 @@
     <Project Path="tests/BuytOi.Gtfs.Tests/BuytOi.Gtfs.Tests.csproj" />
     <Project Path="tests/BuytOi.Catalog.Tests/BuytOi.Catalog.Tests.csproj" />
     <Project Path="tests/BuytOi.Ingestion.Tests/BuytOi.Ingestion.Tests.csproj" />
+    <Project Path="tests/BuytOi.Routing.Tests/BuytOi.Routing.Tests.csproj" />
   </Folder>
 </Solution>
