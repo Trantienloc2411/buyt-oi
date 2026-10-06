@@ -1,6 +1,6 @@
 {
   "profiles": {
-    "BuytOi.Host": {
+    "BuytOi.Api": {
       "commandName": "Project",
       "launchBrowser": false,
       "environmentVariables": {

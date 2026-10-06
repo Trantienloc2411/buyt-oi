@@ -5,6 +5,7 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" />
-    <ProjectReference Include="../Modules/Catalog/BuytOi.Catalog/BuytOi.Catalog.csproj" />
+    <ProjectReference Include="../../Shared/BuytOi.Gtfs/BuytOi.Gtfs.csproj" />
+    <ProjectReference Include="../../Modules/Catalog/BuytOi.Catalog.Infrastructure/BuytOi.Catalog.Infrastructure.csproj" />
   </ItemGroup>
 </Project>

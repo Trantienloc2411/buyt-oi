@@ -1,5 +1,5 @@
 using BuytOi.Gtfs;
-using BuytOi.Ingestion;
+using BuytOi.Ingestion.Infrastructure;
 
 namespace BuytOi.Ingestion.Tests;
 

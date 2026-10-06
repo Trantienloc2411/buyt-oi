@@ -1,10 +1,10 @@
-#:project ../src/Modules/Ingestion/BuytOi.Ingestion/BuytOi.Ingestion.csproj
+#:project ../src/Modules/Ingestion/BuytOi.Ingestion.Infrastructure/BuytOi.Ingestion.Infrastructure.csproj
 
 // Sinh GTFS từ dữ liệu crawl.
 // Dùng: dotnet run scripts/build-gtfs.cs [thư-mục-crawl=data] [thư-mục-ra=artifacts/gtfs]
 using System.IO.Compression;
 using BuytOi.Gtfs;
-using BuytOi.Ingestion;
+using BuytOi.Ingestion.Infrastructure;
 
 var input = args.Length > 0 ? args[0] : "data";
 var output = args.Length > 1 ? args[1] : "artifacts/gtfs";

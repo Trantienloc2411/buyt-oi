@@ -5,7 +5,7 @@ import { defineConfig } from 'vite'
 export default defineConfig({
   plugins: [svelte()],
   server: {
-    // Backend: `dotnet run --project src/BuytOi.Host` (mặc định http://localhost:5000).
+    // Backend: `dotnet run --project src/Apps/BuytOi.Api` (mặc định http://localhost:5000).
     proxy: { '/api': 'http://localhost:5000' },
   },
 })

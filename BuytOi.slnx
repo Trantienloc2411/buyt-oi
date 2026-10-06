@@ -1,11 +1,22 @@
 <Solution>
-  <Folder Name="/src/">
-    <Project Path="src/BuytOi.Host/BuytOi.Host.csproj" />
+  <Folder Name="/src/" />
+  <Folder Name="/src/Apps/">
+    <Project Path="src/Apps/BuytOi.Api/BuytOi.Api.csproj" />
+  </Folder>
+  <Folder Name="/src/Modules/" />
+  <Folder Name="/src/Modules/Catalog/">
+    <Project Path="src/Modules/Catalog/BuytOi.Catalog.Domain/BuytOi.Catalog.Domain.csproj" />
+    <Project Path="src/Modules/Catalog/BuytOi.Catalog.Application/BuytOi.Catalog.Application.csproj" />
+    <Project Path="src/Modules/Catalog/BuytOi.Catalog.Infrastructure/BuytOi.Catalog.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/src/Modules/Ingestion/">
+    <Project Path="src/Modules/Ingestion/BuytOi.Ingestion.Infrastructure/BuytOi.Ingestion.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/src/Shared/">
     <Project Path="src/Shared/BuytOi.Gtfs/BuytOi.Gtfs.csproj" />
-    <Project Path="src/Modules/Catalog/BuytOi.Catalog/BuytOi.Catalog.csproj" />
-    <Project Path="src/Modules/Ingestion/BuytOi.Ingestion/BuytOi.Ingestion.csproj" />
   </Folder>
   <Folder Name="/tests/">
+    <Project Path="tests/BuytOi.ArchitectureTests/BuytOi.ArchitectureTests.csproj" />
     <Project Path="tests/BuytOi.Gtfs.Tests/BuytOi.Gtfs.Tests.csproj" />
     <Project Path="tests/BuytOi.Catalog.Tests/BuytOi.Catalog.Tests.csproj" />
     <Project Path="tests/BuytOi.Ingestion.Tests/BuytOi.Ingestion.Tests.csproj" />
