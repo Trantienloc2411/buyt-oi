@@ -104,8 +104,8 @@
     return () => ctrl.abort()
   })
 
-  const path = (leg: JourneyLeg): [number, number][] =>
-    (leg.mode === 'Transit' && leg.stops ? leg.stops : [leg.from, leg.to]).map((p) => [p.lon, p.lat])
+  // Chặng xe: theo đường xe chạy (shape OSM nếu backend có); đi bộ: nối thẳng.
+  const path = (leg: JourneyLeg): [number, number][] => (leg.path ?? [leg.from, leg.to]).map((p) => [p.lon, p.lat])
 
   // Vẽ hành trình đang chọn: chặng xe theo màu tuyến, chặng đi bộ nét đứt. Rời panel → xoá.
   $effect(() => {

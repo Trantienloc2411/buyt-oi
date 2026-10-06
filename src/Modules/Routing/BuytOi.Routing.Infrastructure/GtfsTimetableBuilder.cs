@@ -47,6 +47,10 @@ public static class GtfsTimetableBuilder
         var patternTripStart = new int[patterns.Count + 1];
         var patternRoute = new int[patterns.Count];
         var patternStops = new List<int>();
+        var shapes = feed.Shapes.GroupBy(sp => sp.ShapeId)
+            .ToDictionary(g => g.Key, g => g.OrderBy(sp => sp.Sequence).Select(sp => new GeoPoint(sp.Lat, sp.Lon)).ToArray());
+        var shapePoints = new List<GeoPoint>();
+        var patternStopShape = new List<int>();
         var trips = new List<Trip>();
         var tripPattern = new List<int>();
         var tripService = new List<int>();
@@ -62,6 +66,20 @@ public static class GtfsTimetableBuilder
             patternStopStart[p] = patternStops.Count;
             patternTripStart[p] = trips.Count;
             patternRoute[p] = routeIndex[first.Trip.RouteId];
+            // Pattern dùng shape của chuyến đầu (cùng dãy trạm nên cùng đường); gán vị trí trạm lên shape.
+            var stopPoints = first.Times.Select(st => stops[stopIndex[st.StopId]]).Select(s => new GeoPoint(s.Lat, s.Lon)).ToList();
+            if (first.Trip.ShapeId is { } shapeId && shapes.TryGetValue(shapeId, out var shape)
+                && ShapeMatching.TryStopPositions(shape, stopPoints) is { } positions)
+            {
+                var offset = shapePoints.Count;
+                shapePoints.AddRange(shape);
+                patternStopShape.AddRange(positions.Select(i => offset + i));
+            }
+            else
+            {
+                patternStopShape.AddRange(Enumerable.Repeat(-1, first.Times.Length));
+            }
+
             foreach (var st in first.Times)
             {
                 var s = stopIndex[st.StopId];
@@ -97,6 +115,8 @@ public static class GtfsTimetableBuilder
             TimeZone = TimeZoneInfo.FindSystemTimeZoneById(feed.Agencies[0].Timezone),
             PatternStopStart = patternStopStart,
             PatternStops = [.. patternStops],
+            ShapePoints = [.. shapePoints],
+            PatternStopShape = [.. patternStopShape],
             PatternTripStart = patternTripStart,
             PatternRoute = patternRoute,
             Trips = [.. trips],

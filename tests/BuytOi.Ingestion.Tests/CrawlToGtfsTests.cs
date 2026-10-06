@@ -11,6 +11,15 @@ public sealed class CrawlToGtfsTests
 
     private static List<StopTime> StopTimesOf(string tripId) => Feed.StopTimes.Where(st => st.TripId == tripId).ToList();
 
+    [Theory]
+    [InlineData("01", RouteType.Bus)]
+    [InlineData("MRT1", RouteType.Subway)]
+    [InlineData("SWB1", RouteType.Ferry)]
+    public void Loai_tuyen_theo_so_hieu(string routeNo, RouteType expected)
+    {
+        Assert.Equal(expected, CrawlToGtfs.RouteTypeOf(routeNo));
+    }
+
     [Fact]
     public void Tham_chieu_giua_cac_bang_deu_ton_tai()
     {

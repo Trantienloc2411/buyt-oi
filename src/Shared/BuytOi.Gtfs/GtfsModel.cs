@@ -4,7 +4,7 @@ namespace BuytOi.Gtfs;
 
 public sealed record Agency(string Id, string Name, string Url, string Timezone, string? Phone = null);
 
-public enum RouteType { Tram = 0, Subway = 1, Rail = 2, Bus = 3 }
+public enum RouteType { Tram = 0, Subway = 1, Rail = 2, Bus = 3, Ferry = 4 }
 
 public sealed record Route(string Id, string AgencyId, string ShortName, string LongName, RouteType Type, string? Color = null);
 

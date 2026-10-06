@@ -34,12 +34,13 @@
     }
   }
 
-  // Vẽ tuyến đang chọn: đường nối các trạm (chưa có shape thật) + các trạm. Rời panel → xoá.
+  // Vẽ tuyến đang chọn + các trạm. Rời panel → xoá.
   $effect(() => {
     const src = map.getSource<GeoJSONSource>('route')!
     if (selected && direction && direction.stops.length > 0) {
       const c = color(selected.color)
-      const coords = direction.stops.map((s) => [s.lon, s.lat] as [number, number])
+      // Theo shape (map-match OSM) nếu có, không thì nối thẳng các trạm.
+      const coords = (direction.path ?? direction.stops).map((p) => [p.lon, p.lat] as [number, number])
       src.setData({
         type: 'FeatureCollection',
         features: [

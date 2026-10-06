@@ -95,17 +95,19 @@ public sealed class JourneyPlanner(ITimetableSource source, TimeProvider time) :
         return new JourneyLeg(LegMode.Transit, from, to, at(leg.Departure), at(leg.Arrival), (int)Math.Round(distance),
             route.Id, route.ShortName, route.Color, trip.Headsign, leg.AlightPosition - leg.BoardPosition,
             Approximate: !tt.Timepoints[times + leg.BoardPosition] || !tt.Timepoints[times + leg.AlightPosition],
-            Stops: stops.Select(s => Place(tt, s)).ToList());
+            Stops: stops.Select(s => Place(tt, s)).ToList(),
+            Path: tt.Path(tt.TripPattern[leg.Trip], leg.BoardPosition, leg.AlightPosition));
     }
 
     /// <summary>
-    /// Gộp các chặng đi bộ liền nhau (xuống xe → đi bộ đổi trạm → đi bộ tới đích, khi hoà giờ với đi thẳng)
+    /// Bỏ chặng đi bộ 0 m; gộp các chặng đi bộ liền nhau (xuống xe → đi bộ đổi trạm → đi bộ tới đích, khi hoà giờ với đi thẳng)
     /// thành một chặng đi thẳng: đường chim bay không dài hơn tổng hai chặng nên giờ đến không muộn hơn.
     /// </summary>
     private static List<JourneyLeg> MergeWalks(IEnumerable<JourneyLeg> legs)
     {
         var result = new List<JourneyLeg>();
-        foreach (var leg in legs)
+        // Điểm đi/đến trùng trạm → chặng đi bộ 0 m, bỏ.
+        foreach (var leg in legs.Where(l => l.Mode != LegMode.Walk || l.DistanceMeters > 0))
         {
             if (leg.Mode == LegMode.Walk && result.Count > 0 && result[^1].Mode == LegMode.Walk)
             {

@@ -24,6 +24,12 @@ public static class CrawlToGtfs
 
     /// <param name="crawlDir">Thư mục chứa routes.csv, stops.csv, ... và routes_raw.json.</param>
     /// <param name="defaultEndDate">end_date cho lịch không có EndDate.</param>
+    /// <summary>MRT = metro; SWB (Saigon Waterbus) = buýt đường sông → map-match theo đường thuỷ, không theo đường bộ.</summary>
+    public static RouteType RouteTypeOf(string routeNo) =>
+        routeNo.StartsWith("MRT", StringComparison.Ordinal) ? RouteType.Subway
+        : routeNo.StartsWith("SWB", StringComparison.Ordinal) ? RouteType.Ferry
+        : RouteType.Bus;
+
     public static GtfsFeed Convert(string crawlDir, DateOnly defaultEndDate)
     {
         List<Dictionary<string, string>> Read(string name) => ReadCsv(Path.Combine(crawlDir, name));
@@ -35,7 +41,7 @@ public static class CrawlToGtfs
         var routes = Read("routes.csv")
             .Select(r => new Route(
                 r["RouteId"], AgencyOf(r["Orgs"], agencies), r["RouteNo"], r["RouteName"],
-                r["RouteNo"].StartsWith("MRT", StringComparison.Ordinal) ? RouteType.Subway : RouteType.Bus,
+                RouteTypeOf(r["RouteNo"]),
                 colors.GetValueOrDefault(r["RouteId"])))
             .ToList();
 

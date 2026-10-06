@@ -256,6 +256,12 @@ export interface paths {
 export type webhooks = Record<string, never>;
 export interface components {
     schemas: {
+        GeoPoint: {
+            /** Format: double */
+            lat: number;
+            /** Format: double */
+            lon: number;
+        };
         HttpValidationProblemDetails: {
             type?: null | string;
             title?: null | string;
@@ -295,6 +301,7 @@ export interface components {
             /** @default false */
             approximate: boolean;
             stops?: null | components["schemas"]["LegPlace"][];
+            path?: null | components["schemas"]["GeoPoint"][];
         };
         /** @enum {unknown} */
         LegMode: "Walk" | "Transit";
@@ -331,6 +338,7 @@ export interface components {
             directionId: number;
             headsign: null | string;
             stops: components["schemas"]["StopInfo"][];
+            path?: null | components["schemas"]["GeoPoint"][];
         };
         RouteSummary: {
             id: string;
@@ -340,7 +348,7 @@ export interface components {
             color: null | string;
         };
         /** @enum {unknown} */
-        RouteType: "Tram" | "Subway" | "Rail" | "Bus";
+        RouteType: "Tram" | "Subway" | "Rail" | "Bus" | "Ferry";
         StopInfo: {
             id: string;
             code: null | string;

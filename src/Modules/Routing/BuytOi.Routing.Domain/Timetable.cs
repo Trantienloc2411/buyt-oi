@@ -39,6 +39,11 @@ public sealed class Timetable
     public required int[] PatternTripStart { get; init; }
     public required int[] PatternRoute { get; init; }
 
+    // Hình dạng tuyến (map-match OSM, có thể không có). Trạm ở vị trí i của pattern p nằm tại
+    // ShapePoints[PatternStopShape[PatternStopStart[p] + i]]; -1 = pattern không có shape → nối thẳng các trạm.
+    public required GeoPoint[] ShapePoints { get; init; }
+    public required int[] PatternStopShape { get; init; }
+
     // Chuyến t: giờ tại vị trí i của pattern nằm ở Arrivals/Departures/Timepoints[TripTimeStart[t] + i].
     public required Trip[] Trips { get; init; }
     public required int[] TripPattern { get; init; }
@@ -60,6 +65,16 @@ public sealed class Timetable
     public int PatternStopCount(int pattern) => PatternStopStart[pattern + 1] - PatternStopStart[pattern];
 
     public int PatternStop(int pattern, int position) => PatternStops[PatternStopStart[pattern] + position];
+
+    /// <summary>Đường xe chạy từ vị trí <paramref name="from"/> tới <paramref name="to"/> của pattern (gồm cả hai trạm).</summary>
+    public List<GeoPoint> Path(int pattern, int from, int to)
+    {
+        GeoPoint At(int position) => new(Stops[PatternStop(pattern, position)].Lat, Stops[PatternStop(pattern, position)].Lon);
+        var start = PatternStopShape[PatternStopStart[pattern] + from];
+        if (start < 0) return Enumerable.Range(from, to - from + 1).Select(At).ToList();
+        var end = PatternStopShape[PatternStopStart[pattern] + to];
+        return [At(from), .. ShapePoints.AsSpan(start, end - start + 1), At(to)];
+    }
 
     public int Arrival(int trip, int position) => Arrivals[TripTimeStart[trip] + position];
 

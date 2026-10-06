@@ -9,7 +9,9 @@ public sealed record StopInfo(string Id, string? Code, string Name, double Lat, 
 public sealed record NearbyStop(string Id, string? Code, string Name, double Lat, double Lon, int DistanceMeters);
 
 /// <param name="Stops">Trạm theo thứ tự của chuyến có nhiều trạm nhất trong hướng này.</param>
-public sealed record RouteDirection(int DirectionId, string? Headsign, IReadOnlyList<StopInfo> Stops);
+/// <param name="Path">Shape của chuyến đó (map-match OSM); null khi feed không có shape → nối thẳng các trạm.</param>
+public sealed record RouteDirection(int DirectionId, string? Headsign, IReadOnlyList<StopInfo> Stops,
+    IReadOnlyList<GeoPoint>? Path = null);
 
 public sealed record RouteDetail(string Id, string ShortName, string LongName, RouteType Type, string? Color,
     string AgencyName, IReadOnlyList<RouteDirection> Directions);

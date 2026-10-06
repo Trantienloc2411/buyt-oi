@@ -25,13 +25,16 @@ public sealed class JourneyPlannerTests
     private sealed record T(string Route, params (string Stop, int H, int M)[] Times)
     {
         public string Service { get; init; } = "ALL";
+        public GeoPoint[]? Shape { get; init; }
     }
 
     private static IJourneyPlanner Planner(params T[] trips)
     {
         var routes = trips.Select(t => t.Route).Distinct()
             .Select(r => new Route(r, "ag", r, $"Tuyến {r}", RouteType.Bus)).ToList();
-        var gtfsTrips = trips.Select((t, i) => new Trip($"t{i}", t.Route, t.Service, 0, $"Về {t.Times[^1].Stop}")).ToList();
+        var gtfsTrips = trips.Select((t, i) =>
+            new Trip($"t{i}", t.Route, t.Service, 0, $"Về {t.Times[^1].Stop}", t.Shape is null ? null : $"s{i}")).ToList();
+        var shapes = trips.SelectMany((t, i) => (t.Shape ?? []).Select((p, n) => new ShapePoint($"s{i}", n + 1, p.Lat, p.Lon))).ToList();
         var stopTimes = trips.SelectMany((t, i) => t.Times.Select((st, seq) =>
             new StopTime($"t{i}", seq + 1, st.Stop, GtfsTime.FromHm(st.H, st.M), GtfsTime.FromHm(st.H, st.M)))).ToList();
         var calendars = new List<Calendar>
@@ -41,7 +44,7 @@ public sealed class JourneyPlannerTests
                 new DateOnly(2026, 1, 1), new DateOnly(2027, 12, 31)),
         };
         var feed = new GtfsFeed([new Agency("ag", "Agency", "https://example.com", "Asia/Ho_Chi_Minh")],
-            routes, Stops, gtfsTrips, stopTimes, calendars, []);
+            routes, Stops, gtfsTrips, stopTimes, calendars, shapes);
         return Planner(feed);
     }
 
@@ -75,12 +78,28 @@ public sealed class JourneyPlannerTests
         var j = Assert.Single(planner.Plan(Query("A", "C", 7, 50)));
 
         Assert.Equal(0, j.Transfers);
-        Assert.Equal([LegMode.Walk, LegMode.Transit, LegMode.Walk], j.Legs.Select(l => l.Mode));
+        Assert.Equal([LegMode.Transit], j.Legs.Select(l => l.Mode)); // đứng đúng tại trạm: không có chặng đi bộ 0 m
         var ride = Rides(j).Single();
         Assert.Equal(("R1", "A", "C", 2), (ride.RouteShortName, ride.From.StopId, ride.To.StopId, ride.StopCount));
         Assert.Equal((At(8, 0), At(8, 20)), (j.Departure, j.Arrival));
         Assert.Equal("Về C", ride.Headsign);
         Assert.Equal(["A", "B", "C"], ride.Stops!.Select(s => s.StopId));
+    }
+
+    [Fact]
+    public void Chang_xe_ve_theo_shape_neu_co_khong_thi_noi_thang_tram()
+    {
+        // Shape A → C đi vòng lên phía bắc (lat 10,72) thay vì thẳng; B nằm giữa đường thẳng nên không thuộc chặng.
+        GeoPoint[] shape = [new(10.70, 106.60), new(10.72, 106.62), new(10.72, 106.68), new(10.70, 106.70)];
+        var planner = Planner(
+            new T("R1", ("A", 8, 0), ("C", 8, 30)) { Shape = shape },
+            new T("R2", ("C", 8, 40), ("D", 9, 0)));
+
+        var rides = Rides(Assert.Single(planner.Plan(Query("A", "D", 7, 55)))).ToList();
+
+        // Đầu/cuối là toạ độ trạm, giữa là các điểm shape từ trạm lên tới trạm xuống.
+        Assert.Equal([new(10.70, 106.60), .. shape, new(10.70, 106.70)], rides[0].Path);
+        Assert.Equal([new(10.70, 106.70), new GeoPoint(10.70, 106.75)], rides[1].Path); // R2 không có shape
     }
 
     [Fact]
@@ -120,8 +139,8 @@ public sealed class JourneyPlannerTests
         var j = Assert.Single(planner.Plan(Query("A", "D", 7, 55)));
 
         Assert.Equal(1, j.Transfers);
-        Assert.Equal([LegMode.Walk, LegMode.Transit, LegMode.Walk, LegMode.Transit, LegMode.Walk], j.Legs.Select(l => l.Mode));
-        var walk = j.Legs[2];
+        Assert.Equal([LegMode.Transit, LegMode.Walk, LegMode.Transit], j.Legs.Select(l => l.Mode));
+        var walk = j.Legs[1];
         Assert.Equal(("B", "B2"), (walk.From.StopId, walk.To.StopId));
         Assert.InRange(walk.DistanceMeters, 200, 250); // ~167 m chim bay × 1,3
         Assert.Equal(At(8, 40), j.Arrival);
@@ -135,9 +154,9 @@ public sealed class JourneyPlannerTests
 
         var j = Assert.Single(planner.Plan(Query("A", "B2", 7, 55)));
 
-        Assert.Equal([LegMode.Walk, LegMode.Transit, LegMode.Walk], j.Legs.Select(l => l.Mode));
-        Assert.Equal(("B", null), (j.Legs[2].From.StopId, j.Legs[2].To.StopId));
-        Assert.Equal(j.Legs[2].Arrival, j.Arrival);
+        Assert.Equal([LegMode.Transit, LegMode.Walk], j.Legs.Select(l => l.Mode));
+        Assert.Equal("B", j.Legs[1].From.StopId); // một chặng đi bộ từ B (tới B2 = điểm đến)
+        Assert.Equal(j.Legs[1].Arrival, j.Arrival);
     }
 
     [Fact]

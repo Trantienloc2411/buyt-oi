@@ -15,6 +15,8 @@ public static class GtfsCatalogBuilder
         var agencyName = feed.Agencies.ToDictionary(a => a.Id, a => a.Name);
         var stopTimesByTrip = feed.StopTimes.ToLookup(st => st.TripId);
         var tripsByRoute = feed.Trips.ToLookup(t => t.RouteId);
+        var shapes = feed.Shapes.GroupBy(sp => sp.ShapeId).ToDictionary(g => g.Key,
+            g => (IReadOnlyList<GeoPoint>)g.OrderBy(sp => sp.Sequence).Select(sp => new GeoPoint(sp.Lat, sp.Lon)).ToList());
 
         var details = feed.Routes.ToDictionary(r => r.Id, r => new RouteDetail(
             r.Id, r.ShortName, r.LongName, r.Type, r.Color, agencyName[r.AgencyId],
@@ -24,8 +26,11 @@ public static class GtfsCatalogBuilder
                 .Select(g =>
                 {
                     var longest = g.MaxBy(t => stopTimesByTrip[t.Id].Count())!;
-                    return new RouteDirection(g.Key, longest.Headsign,
-                        stopTimesByTrip[longest.Id].OrderBy(st => st.Sequence).Select(st => stopById[st.StopId]).ToList());
+                    var directionStops = stopTimesByTrip[longest.Id].OrderBy(st => st.Sequence).Select(st => stopById[st.StopId]).ToList();
+                    var path = longest.ShapeId is { } shapeId ? shapes.GetValueOrDefault(shapeId) : null;
+                    var shapeOk = path is not null && ShapeMatching.TryStopPositions(
+                        path, directionStops.Select(s => new GeoPoint(s.Lat, s.Lon)).ToList()) is not null;
+                    return new RouteDirection(g.Key, longest.Headsign, directionStops, shapeOk ? path : null);
                 })
                 .ToList()));
 
