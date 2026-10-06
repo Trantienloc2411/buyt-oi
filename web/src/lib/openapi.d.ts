@@ -294,6 +294,7 @@ export interface components {
             stopCount?: null | number;
             /** @default false */
             approximate: boolean;
+            stops?: null | components["schemas"]["LegPlace"][];
         };
         /** @enum {unknown} */
         LegMode: "Walk" | "Transit";

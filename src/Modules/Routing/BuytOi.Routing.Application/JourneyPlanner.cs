@@ -56,8 +56,9 @@ public sealed class JourneyPlanner(ITimetableSource source, TimeProvider time) :
             (int)(query.DepartAt - serviceDay).TotalSeconds,
             tt.ActiveServices(date));
 
-        var journeys = raw.Select(j => new Journey(At(j.Legs[0].Departure), At(j.Legs[^1].Arrival), j.Transfers,
-            j.Legs.Select(leg => ToLeg(tt, leg, At, origin, destination)).ToList())).ToList();
+        var journeys = raw.Select(j => MergeWalks(j.Legs.Select(leg => ToLeg(tt, leg, At, origin, destination))))
+            .Select((legs, i) => new Journey(legs[0].Departure, legs[^1].Arrival, raw[i].Transfers, legs))
+            .ToList();
 
         var direct = Geo.DistanceMeters(query.FromLat, query.FromLon, query.ToLat, query.ToLon);
         if (direct <= MaxAccessMeters)
@@ -86,16 +87,43 @@ public sealed class JourneyPlanner(ITimetableSource source, TimeProvider time) :
         var trip = tt.Trips[leg.Trip];
         var route = tt.Routes[tt.PatternRoute[tt.TripPattern[leg.Trip]]];
         var times = tt.TripTimeStart[leg.Trip];
-        var distance = 0.0;
-        for (var i = leg.BoardPosition; i < leg.AlightPosition; i++)
-        {
-            var a = tt.Stops[tt.PatternStop(tt.TripPattern[leg.Trip], i)];
-            var b = tt.Stops[tt.PatternStop(tt.TripPattern[leg.Trip], i + 1)];
-            distance += Geo.DistanceMeters(a.Lat, a.Lon, b.Lat, b.Lon);
-        }
+        var stops = Enumerable.Range(leg.BoardPosition, leg.AlightPosition - leg.BoardPosition + 1)
+            .Select(i => tt.PatternStop(tt.TripPattern[leg.Trip], i))
+            .ToList();
+        var distance = stops.Zip(stops.Skip(1)).Sum(p =>
+            Geo.DistanceMeters(tt.Stops[p.First].Lat, tt.Stops[p.First].Lon, tt.Stops[p.Second].Lat, tt.Stops[p.Second].Lon));
         return new JourneyLeg(LegMode.Transit, from, to, at(leg.Departure), at(leg.Arrival), (int)Math.Round(distance),
             route.Id, route.ShortName, route.Color, trip.Headsign, leg.AlightPosition - leg.BoardPosition,
-            Approximate: !tt.Timepoints[times + leg.BoardPosition] || !tt.Timepoints[times + leg.AlightPosition]);
+            Approximate: !tt.Timepoints[times + leg.BoardPosition] || !tt.Timepoints[times + leg.AlightPosition],
+            Stops: stops.Select(s => Place(tt, s)).ToList());
+    }
+
+    /// <summary>
+    /// Gộp các chặng đi bộ liền nhau (xuống xe → đi bộ đổi trạm → đi bộ tới đích, khi hoà giờ với đi thẳng)
+    /// thành một chặng đi thẳng: đường chim bay không dài hơn tổng hai chặng nên giờ đến không muộn hơn.
+    /// </summary>
+    private static List<JourneyLeg> MergeWalks(IEnumerable<JourneyLeg> legs)
+    {
+        var result = new List<JourneyLeg>();
+        foreach (var leg in legs)
+        {
+            if (leg.Mode == LegMode.Walk && result.Count > 0 && result[^1].Mode == LegMode.Walk)
+            {
+                var prev = result[^1];
+                var d = Geo.DistanceMeters(prev.From.Lat, prev.From.Lon, leg.To.Lat, leg.To.Lon);
+                result[^1] = prev with
+                {
+                    To = leg.To,
+                    Arrival = prev.Departure.AddSeconds(Walking.Seconds(d)),
+                    DistanceMeters = Walking.Meters(d),
+                };
+            }
+            else
+            {
+                result.Add(leg);
+            }
+        }
+        return result;
     }
 
     private static LegPlace Place(Timetable tt, int stop) =>

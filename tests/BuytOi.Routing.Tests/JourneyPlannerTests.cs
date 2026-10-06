@@ -13,8 +13,8 @@ public sealed class JourneyPlannerTests
     private static readonly Stop[] Stops =
     [
         new("A", null, "Trạm A", 10.70, 106.60),
+        new("B2", null, "Trạm B2", 10.7015, 106.65), // đứng trước B: hoà giờ thì nhãn đi bộ được xét trước
         new("B", null, "Trạm B", 10.70, 106.65),
-        new("B2", null, "Trạm B2", 10.7015, 106.65),
         new("C", null, "Trạm C", 10.70, 106.70),
         new("D", null, "Trạm D", 10.70, 106.75),
     ];
@@ -80,6 +80,7 @@ public sealed class JourneyPlannerTests
         Assert.Equal(("R1", "A", "C", 2), (ride.RouteShortName, ride.From.StopId, ride.To.StopId, ride.StopCount));
         Assert.Equal((At(8, 0), At(8, 20)), (j.Departure, j.Arrival));
         Assert.Equal("Về C", ride.Headsign);
+        Assert.Equal(["A", "B", "C"], ride.Stops!.Select(s => s.StopId));
     }
 
     [Fact]
@@ -127,6 +128,19 @@ public sealed class JourneyPlannerTests
     }
 
     [Fact]
+    public void Khong_noi_hai_chang_di_bo_lien_nhau()
+    {
+        // Đích ở B2: xuống B rồi đi bộ sang B2, hay xuống B rồi đi thẳng tới đích — hoà giờ, phải ra một chặng đi bộ.
+        var planner = Planner(new T("R1", ("A", 8, 0), ("B", 8, 10)));
+
+        var j = Assert.Single(planner.Plan(Query("A", "B2", 7, 55)));
+
+        Assert.Equal([LegMode.Walk, LegMode.Transit, LegMode.Walk], j.Legs.Select(l => l.Mode));
+        Assert.Equal(("B", null), (j.Legs[2].From.StopId, j.Legs[2].To.StopId));
+        Assert.Equal(j.Legs[2].Arrival, j.Arrival);
+    }
+
+    [Fact]
     public void Chuyen_xuat_ben_sau_nhung_den_som_hon_van_duoc_chon()
     {
         // Cùng tuyến, cùng dãy trạm nhưng chuyến 08:10 vượt chuyến 08:00 → phải tách pattern.
@@ -157,6 +171,7 @@ public sealed class JourneyPlannerTests
 
         Assert.Equal(At(8, 30), j.Arrival);
         Assert.Equal(1, Rides(j).Single().StopCount);
+        Assert.Equal(["C", "A"], Rides(j).Single().Stops!.Select(s => s.StopId));
     }
 
     [Fact]

@@ -11,10 +11,11 @@ public enum LegMode { Walk, Transit }
 public sealed record LegPlace(string? StopId, string Name, double Lat, double Lon);
 
 /// <param name="Approximate">true khi giờ lên hoặc xuống là giờ nội suy (GTFS timepoint=0), không phải giờ chính xác.</param>
+/// <param name="Stops">Chặng đi xe: các trạm từ trạm lên tới trạm xuống (gồm cả hai), để vẽ và liệt kê.</param>
 public sealed record JourneyLeg(
     LegMode Mode, LegPlace From, LegPlace To, DateTime Departure, DateTime Arrival, int DistanceMeters,
     string? RouteId = null, string? RouteShortName = null, string? RouteColor = null, string? Headsign = null,
-    int? StopCount = null, bool Approximate = false);
+    int? StopCount = null, bool Approximate = false, IReadOnlyList<LegPlace>? Stops = null);
 
 /// <param name="Transfers">Số lần đổi tuyến (số chặng đi xe trừ 1).</param>
 public sealed record Journey(DateTime Departure, DateTime Arrival, int Transfers, IReadOnlyList<JourneyLeg> Legs);
