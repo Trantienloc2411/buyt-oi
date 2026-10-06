@@ -19,3 +19,25 @@ body,
   margin: 0;
   height: 100%;
 }
+
+/* Dùng chung cho các panel. */
+.list {
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  list-style: none;
+}
+
+.badge {
+  flex: none;
+  min-width: 3.2rem;
+  padding: 0.2rem 0.4rem;
+  font-weight: 600;
+  text-align: center;
+  border-radius: 6px;
+}
+
+.error {
+  margin: 0;
+  color: #b00020;
+}

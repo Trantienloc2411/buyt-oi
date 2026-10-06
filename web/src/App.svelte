@@ -1,78 +1,42 @@
 <script lang="ts">
   import { onMount } from 'svelte'
-  import { LngLatBounds, Map, NavigationControl, Popup, setWorkerUrl, type GeoJSONSource } from 'maplibre-gl'
+  import { LngLatBounds, Map, NavigationControl, Popup, setWorkerUrl } from 'maplibre-gl'
   // MapLibre 6 tìm worker cạnh file JS của nó; Vite gộp lại nên đường dẫn sai → chỉ đường cho nó.
   import workerUrl from 'maplibre-gl/dist/maplibre-gl-worker.mjs?worker&url'
-  import type { Feature, FeatureCollection } from 'geojson'
-  import { api, type RouteDetail, type RouteSummary, type StopInfo } from './lib/api'
+  import type { FeatureCollection } from 'geojson'
+  import { api, type RouteSummary, type StopInfo } from './lib/api'
+  import JourneyPanel from './JourneyPanel.svelte'
+  import RoutesPanel from './RoutesPanel.svelte'
 
   // ponytail: nền bản đồ công cộng OpenFreeMap; chuyển sang PMTiles tự host (Protomaps) khi deploy.
   const STYLE = 'https://tiles.openfreemap.org/styles/liberty'
   const HCMC: [number, number] = [106.7, 10.78]
   const EMPTY: FeatureCollection = { type: 'FeatureCollection', features: [] }
 
+  type Mode = 'journey' | 'routes'
+  const MODES: [Mode, string][] = [
+    ['journey', 'Tìm đường'],
+    ['routes', 'Tuyến'],
+  ]
+
   let mapEl: HTMLDivElement
   let panelEl: HTMLElement
-  let map: Map | undefined
+  let map = $state<Map>()
+  let mode = $state<Mode>('journey')
   let routes = $state<RouteSummary[]>([])
-  let query = $state('')
-  let selected = $state<RouteDetail | null>(null)
-  let directionId = $state(0)
+  let stops = $state<StopInfo[]>([])
   let error = $state<string | null>(null)
 
-  // Tìm không dấu: "ben thanh" khớp "Bến Thành".
-  const fold = (s: string) => s.normalize('NFD').replace(/\p{M}/gu, '').replace(/đ/gi, 'd').toLowerCase()
-  const filtered = $derived.by(() => {
-    const q = fold(query.trim())
-    return q ? routes.filter((r) => fold(`${r.shortName} ${r.longName}`).includes(q)) : routes
-  })
-  const direction = $derived(
-    selected?.directions.find((d) => d.directionId === directionId) ?? selected?.directions[0],
-  )
-
-  const color = (hex: string | null | undefined) => `#${hex ?? '0b7a4b'}`
-  // Chữ đen trên nền sáng, chữ trắng trên nền tối (độ sáng tương đối).
-  function textOn(hex: string | null | undefined) {
-    const n = parseInt(hex ?? '0b7a4b', 16)
-    const [r, g, b] = [(n >> 16) & 255, (n >> 8) & 255, n & 255]
-    return 0.299 * r + 0.587 * g + 0.114 * b > 150 ? '#000' : '#fff'
-  }
-
-  const point = (s: StopInfo, props: Record<string, string> = {}): Feature => ({
-    type: 'Feature',
-    geometry: { type: 'Point', coordinates: [s.lon, s.lat] },
-    properties: { name: s.name, code: s.code ?? '', ...props },
-  })
-
-  async function select(id: string) {
-    try {
-      selected = await api.route(id)
-      directionId = selected.directions[0]?.directionId ?? 0
-    } catch (e) {
-      error = `Không tải được tuyến: ${(e as Error).message}`
-    }
-  }
-
-  // Vẽ tuyến đang chọn: đường nối các trạm (chưa có shape thật) + các trạm.
-  $effect(() => {
-    const src = map?.getSource<GeoJSONSource>('route')
-    if (!src) return
-    if (!selected || !direction || direction.stops.length === 0) {
-      src.setData(EMPTY)
-      return
-    }
-    const c = color(selected.color)
-    const coords = direction.stops.map((s) => [s.lon, s.lat] as [number, number])
-    src.setData({
-      type: 'FeatureCollection',
-      features: [
-        { type: 'Feature', geometry: { type: 'LineString', coordinates: coords }, properties: { color: c } },
-        ...direction.stops.map((s) => point(s, { color: c })),
-      ],
-    })
+  // Thu bản đồ vào vùng không bị bảng che: màn hẹp bảng ở đáy, màn rộng bảng bên trái.
+  function fit(coords: [number, number][]) {
+    if (!map || coords.length === 0) return
     const bounds = coords.reduce((b, p) => b.extend(p), new LngLatBounds(coords[0], coords[0]))
-    map!.fitBounds(bounds, { padding: { top: 40, left: 40, right: 40, bottom: panelEl.offsetHeight + 20 }, maxZoom: 15 })
-  })
+    const wide = window.matchMedia('(min-width: 768px)').matches
+    const padding = wide
+      ? { top: 60, right: 40, bottom: 40, left: panelEl.offsetWidth + 40 }
+      : { top: 60, right: 40, bottom: panelEl.offsetHeight + 20, left: 40 }
+    map.fitBounds(bounds, { padding, maxZoom: 15 })
+  }
 
   onMount(() => {
     setWorkerUrl(workerUrl)
@@ -81,8 +45,18 @@
 
     m.on('load', async () => {
       try {
-        const [rs, stops] = await Promise.all([api.routes(), api.stops()])
-        m.addSource('stops', { type: 'geojson', data: { type: 'FeatureCollection', features: stops.map((s) => point(s)) } })
+        const [rs, ss] = await Promise.all([api.routes(), api.stops()])
+        m.addSource('stops', {
+          type: 'geojson',
+          data: {
+            type: 'FeatureCollection',
+            features: ss.map((s) => ({
+              type: 'Feature',
+              geometry: { type: 'Point', coordinates: [s.lon, s.lat] },
+              properties: { name: s.name, code: s.code ?? '' },
+            })),
+          },
+        })
         m.addLayer({
           id: 'stops',
           type: 'circle',
@@ -90,6 +64,8 @@
           minzoom: 13,
           paint: { 'circle-radius': 3, 'circle-color': '#777', 'circle-stroke-width': 1, 'circle-stroke-color': '#fff' },
         })
+
+        // Tuyến đang xem (RoutesPanel) và hành trình đang chọn (JourneyPanel); mỗi panel tự ghi/xoá dữ liệu của mình.
         m.addSource('route', { type: 'geojson', data: EMPTY })
         m.addLayer({
           id: 'route-line',
@@ -106,11 +82,36 @@
           filter: ['==', '$type', 'Point'],
           paint: { 'circle-radius': 5, 'circle-color': '#fff', 'circle-stroke-width': 2, 'circle-stroke-color': ['get', 'color'] },
         })
+        m.addSource('journey', { type: 'geojson', data: EMPTY })
+        m.addLayer({
+          id: 'journey-walk',
+          type: 'line',
+          source: 'journey',
+          filter: ['all', ['==', '$type', 'LineString'], ['==', 'walk', true]],
+          layout: { 'line-cap': 'round' },
+          paint: { 'line-color': '#555', 'line-width': 3, 'line-dasharray': [0.5, 2] },
+        })
+        m.addLayer({
+          id: 'journey-ride',
+          type: 'line',
+          source: 'journey',
+          filter: ['all', ['==', '$type', 'LineString'], ['==', 'walk', false]],
+          layout: { 'line-join': 'round', 'line-cap': 'round' },
+          paint: { 'line-color': ['get', 'color'], 'line-width': 6 },
+        })
+        m.addLayer({
+          id: 'journey-stops',
+          type: 'circle',
+          source: 'journey',
+          filter: ['==', '$type', 'Point'],
+          paint: { 'circle-radius': 6, 'circle-color': '#fff', 'circle-stroke-width': 3, 'circle-stroke-color': ['get', 'color'] },
+        })
 
+        // Popup tên trạm khi xem tuyến; ở chế độ tìm đường, chạm trạm là chọn điểm (JourneyPanel).
         for (const layer of ['stops', 'route-stops']) {
           m.on('click', layer, (e) => {
             const f = e.features?.[0]
-            if (!f) return
+            if (!f || mode !== 'routes') return
             const { name, code } = f.properties as { name: string; code: string }
             const el = document.createElement('div')
             el.innerHTML = '<strong></strong><br><small></small>'
@@ -124,6 +125,7 @@
 
         map = m
         routes = rs
+        stops = ss
       } catch (e) {
         error = `Không tải được dữ liệu: ${(e as Error).message}`
       }
@@ -137,55 +139,22 @@
   <div class="map" bind:this={mapEl}></div>
 
   <section class="panel" bind:this={panelEl}>
+    <div class="modes" role="tablist">
+      {#each MODES as [m, label] (m)}
+        <button role="tab" aria-selected={mode === m} onclick={() => (mode = m)}>{label}</button>
+      {/each}
+    </div>
+
     {#if error}
       <p class="error" role="alert">{error}</p>
     {/if}
 
-    {#if selected}
-      <header>
-        <button class="back" onclick={() => (selected = null)} aria-label="Quay lại danh sách tuyến">←</button>
-        <span class="badge" style:background={color(selected.color)} style:color={textOn(selected.color)}>
-          {selected.shortName}
-        </span>
-        <div>
-          <strong>{selected.longName}</strong>
-          <small>{selected.agencyName}</small>
-        </div>
-      </header>
-
-      {#if selected.directions.length > 1}
-        <div class="tabs" role="tablist">
-          {#each selected.directions as d (d.directionId)}
-            <button
-              role="tab"
-              aria-selected={d.directionId === direction?.directionId}
-              onclick={() => (directionId = d.directionId)}
-            >
-              Đi {d.headsign}
-            </button>
-          {/each}
-        </div>
-      {/if}
-
-      <ol class="list stops">
-        {#each direction?.stops ?? [] as s, i (i)}
-          <li>{s.name}</li>
-        {/each}
-      </ol>
+    {#if !map}
+      <p class="loading">Đang tải…</p>
+    {:else if mode === 'journey'}
+      <JourneyPanel {map} {stops} {fit} />
     {:else}
-      <input type="search" placeholder="Tìm tuyến: số hoặc tên" bind:value={query} aria-label="Tìm tuyến" />
-      <ul class="list">
-        {#each filtered as r (r.id)}
-          <li>
-            <button class="route" onclick={() => select(r.id)}>
-              <span class="badge" style:background={color(r.color)} style:color={textOn(r.color)}>{r.shortName}</span>
-              <span>{r.longName}</span>
-            </button>
-          </li>
-        {:else}
-          <li class="empty">{routes.length ? 'Không có tuyến phù hợp' : 'Đang tải…'}</li>
-        {/each}
-      </ul>
+      <RoutesPanel {map} {routes} {fit} />
     {/if}
   </section>
 </main>
@@ -207,7 +176,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    max-height: 45%;
+    max-height: 55%;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
@@ -223,105 +192,39 @@
       left: 0.75rem;
       right: auto;
       bottom: auto;
-      width: 360px;
+      width: 380px;
       max-height: calc(100% - 1.5rem);
       border-radius: 12px;
     }
   }
 
-  input[type='search'] {
-    width: 100%;
-    padding: 0.6rem 0.75rem;
-    font: inherit;
-    border: 1px solid var(--line);
-    border-radius: 8px;
-  }
-
-  .list {
-    margin: 0;
-    padding: 0;
-    overflow-y: auto;
-    list-style: none;
-  }
-
-  .route {
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-    width: 100%;
-    padding: 0.5rem 0.25rem;
-    font: inherit;
-    text-align: left;
-    background: none;
-    border: 0;
-    border-bottom: 1px solid var(--line);
-    cursor: pointer;
-  }
-
-  .badge {
-    flex: none;
-    min-width: 3.2rem;
-    padding: 0.2rem 0.4rem;
-    font-weight: 600;
-    text-align: center;
-    border-radius: 6px;
-  }
-
-  header {
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-  }
-
-  header small {
-    display: block;
-    color: var(--muted);
-  }
-
-  .back {
-    font-size: 1.25rem;
-    background: none;
-    border: 0;
-    cursor: pointer;
-  }
-
-  .tabs {
+  .modes {
     display: flex;
     gap: 0.25rem;
+    padding: 0.2rem;
+    background: #f0f0f0;
+    border-radius: 10px;
   }
 
-  .tabs button {
+  .modes button {
     flex: 1;
     padding: 0.4rem;
     font: inherit;
-    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--muted);
     background: none;
-    border: 1px solid var(--line);
+    border: 0;
     border-radius: 8px;
     cursor: pointer;
   }
 
-  .tabs button[aria-selected='true'] {
-    color: #fff;
-    background: var(--brand);
-    border-color: var(--brand);
+  .modes button[aria-selected='true'] {
+    color: var(--text);
+    background: var(--bg);
+    box-shadow: 0 1px 3px rgb(0 0 0 / 0.15);
   }
 
-  .stops {
-    padding-left: 1.75rem;
-    list-style: decimal;
-  }
-
-  .stops li {
-    padding: 0.2rem 0;
-  }
-
-  .empty,
-  .error {
+  .loading {
     color: var(--muted);
-  }
-
-  .error {
-    color: #b00020;
   }
 </style>
