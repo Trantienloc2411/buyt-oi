@@ -9,6 +9,8 @@
   </ItemGroup>
   <ItemGroup>
     <Using Include="Xunit" />
+    <ProjectReference Include="../../src/Modules/Routing/BuytOi.Routing.Infrastructure/BuytOi.Routing.Infrastructure.csproj" />
+    <!-- Chỉ để sinh feed từ data/samples trong test; Routing không phụ thuộc Ingestion. -->
     <ProjectReference Include="../../src/Modules/Ingestion/BuytOi.Ingestion.Infrastructure/BuytOi.Ingestion.Infrastructure.csproj" />
     <None Include="../../data/samples/**" LinkBase="samples" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>

@@ -1,12 +1,12 @@
-using BuytOi.Catalog;
-using BuytOi.Gtfs;
-using BuytOi.Ingestion;
+using BuytOi.Catalog.Domain;
+using BuytOi.Catalog.Infrastructure;
+using BuytOi.Ingestion.Infrastructure;
 
 namespace BuytOi.Catalog.Tests;
 
 public sealed class CatalogSnapshotTests
 {
-    private static readonly CatalogSnapshot Catalog = CatalogSnapshot.From(
+    private static readonly CatalogSnapshot Catalog = GtfsCatalogBuilder.Build(
         CrawlToGtfs.Convert(Path.Combine(AppContext.BaseDirectory, "samples"), new DateOnly(2027, 9, 30)));
 
     [Fact]

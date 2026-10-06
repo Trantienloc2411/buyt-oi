@@ -9,7 +9,5 @@
   </ItemGroup>
   <ItemGroup>
     <Using Include="Xunit" />
-    <ProjectReference Include="../../src/Modules/Ingestion/BuytOi.Ingestion.Infrastructure/BuytOi.Ingestion.Infrastructure.csproj" />
-    <None Include="../../data/samples/**" LinkBase="samples" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 </Project>

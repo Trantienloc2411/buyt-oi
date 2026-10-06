@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <ProjectReference Include="../BuytOi.Catalog.Domain/BuytOi.Catalog.Domain.csproj" />
+  </ItemGroup>
+</Project>

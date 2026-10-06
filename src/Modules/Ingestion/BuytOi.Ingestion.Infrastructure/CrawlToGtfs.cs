@@ -5,7 +5,7 @@ using BuytOi.Gtfs;
 using Calendar = BuytOi.Gtfs.Calendar;
 using Microsoft.VisualBasic.FileIO;
 
-namespace BuytOi.Ingestion;
+namespace BuytOi.Ingestion.Infrastructure;
 
 /// <summary>
 /// Chuyển dữ liệu crawl từ buyttphcm.com.vn sang GTFS.

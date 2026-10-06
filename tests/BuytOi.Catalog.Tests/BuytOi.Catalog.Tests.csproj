@@ -9,9 +9,9 @@
   </ItemGroup>
   <ItemGroup>
     <Using Include="Xunit" />
-    <ProjectReference Include="../../src/Modules/Catalog/BuytOi.Catalog/BuytOi.Catalog.csproj" />
+    <ProjectReference Include="../../src/Modules/Catalog/BuytOi.Catalog.Infrastructure/BuytOi.Catalog.Infrastructure.csproj" />
     <!-- Chỉ để sinh feed từ data/samples trong test; Catalog không phụ thuộc Ingestion. -->
-    <ProjectReference Include="../../src/Modules/Ingestion/BuytOi.Ingestion/BuytOi.Ingestion.csproj" />
+    <ProjectReference Include="../../src/Modules/Ingestion/BuytOi.Ingestion.Infrastructure/BuytOi.Ingestion.Infrastructure.csproj" />
     <None Include="../../data/samples/**" LinkBase="samples" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 </Project>

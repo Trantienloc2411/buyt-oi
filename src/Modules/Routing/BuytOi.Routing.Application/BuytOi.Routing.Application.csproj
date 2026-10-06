@@ -1,0 +1,6 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <ProjectReference Include="../BuytOi.Routing.Domain/BuytOi.Routing.Domain.csproj" />
+    <ProjectReference Include="../BuytOi.Routing.Contracts/BuytOi.Routing.Contracts.csproj" />
+  </ItemGroup>
+</Project>

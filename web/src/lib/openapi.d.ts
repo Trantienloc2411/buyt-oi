@@ -202,6 +202,56 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/api/journeys": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: {
+            parameters: {
+                query: {
+                    fromLat: number;
+                    fromLon: number;
+                    toLat: number;
+                    toLon: number;
+                    departAt?: string;
+                };
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description OK */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Journey"][];
+                    };
+                };
+                /** @description Bad Request */
+                400: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/problem+json": components["schemas"]["HttpValidationProblemDetails"];
+                    };
+                };
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
 }
 export type webhooks = Record<string, never>;
 export interface components {
@@ -216,6 +266,44 @@ export interface components {
             errors?: {
                 [key: string]: string[];
             };
+        };
+        Journey: {
+            /** Format: date-time */
+            departure: string;
+            /** Format: date-time */
+            arrival: string;
+            /** Format: int32 */
+            transfers: number;
+            legs: components["schemas"]["JourneyLeg"][];
+        };
+        JourneyLeg: {
+            mode: components["schemas"]["LegMode"];
+            from: components["schemas"]["LegPlace"];
+            to: components["schemas"]["LegPlace"];
+            /** Format: date-time */
+            departure: string;
+            /** Format: date-time */
+            arrival: string;
+            /** Format: int32 */
+            distanceMeters: number;
+            routeId?: null | string;
+            routeShortName?: null | string;
+            routeColor?: null | string;
+            headsign?: null | string;
+            /** Format: int32 */
+            stopCount?: null | number;
+            /** @default false */
+            approximate: boolean;
+        };
+        /** @enum {unknown} */
+        LegMode: "Walk" | "Transit";
+        LegPlace: {
+            stopId: null | string;
+            name: string;
+            /** Format: double */
+            lat: number;
+            /** Format: double */
+            lon: number;
         };
         NearbyStop: {
             id: string;
