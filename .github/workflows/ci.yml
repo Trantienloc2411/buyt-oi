@@ -5,6 +5,10 @@ on:
   push:
     branches: [main]
 
+# Token của CI chỉ đọc, kể cả khi cài đặt repo đổi sau này.
+permissions:
+  contents: read
+
 jobs:
   build-test:
     runs-on: ubuntu-latest

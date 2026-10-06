@@ -139,20 +139,11 @@ public static class CrawlToGtfs
         var result = new double[stops.Count];
         for (var i = 1; i < stops.Count; i++)
         {
-            result[i] = result[i - 1] + Haversine(
+            result[i] = result[i - 1] + Geo.DistanceMeters(
                 double.Parse(stops[i - 1]["Lat"], Inv), double.Parse(stops[i - 1]["Lng"], Inv),
                 double.Parse(stops[i]["Lat"], Inv), double.Parse(stops[i]["Lng"], Inv));
         }
         return result;
-    }
-
-    private static double Haversine(double lat1, double lon1, double lat2, double lon2)
-    {
-        const double R = 6_371_000;
-        double Rad(double deg) => deg * Math.PI / 180;
-        var a = Math.Pow(Math.Sin(Rad(lat2 - lat1) / 2), 2)
-                + Math.Cos(Rad(lat1)) * Math.Cos(Rad(lat2)) * Math.Pow(Math.Sin(Rad(lon2 - lon1) / 2), 2);
-        return 2 * R * Math.Asin(Math.Sqrt(a));
     }
 
     private static ServiceDays ParseDays(string applyDates) =>

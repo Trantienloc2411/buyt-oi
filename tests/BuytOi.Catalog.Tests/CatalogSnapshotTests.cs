@@ -29,6 +29,26 @@ public sealed class CatalogSnapshotTests
     }
 
     [Fact]
+    public void Tram_gan_sap_theo_khoang_cach_va_trong_ban_kinh()
+    {
+        // Đứng đúng tại trạm 9742 (Điểm đầu cuối Nguyễn Siêu).
+        var gan = Catalog.Nearby(10.779948, 106.7064, radiusMeters: 500, limit: 20);
+
+        Assert.Equal("9742", gan[0].Id);
+        Assert.Equal(0, gan[0].DistanceMeters);
+        Assert.All(gan, s => Assert.InRange(s.DistanceMeters, 0, 500));
+        Assert.Equal(gan.Select(s => s.DistanceMeters).Order(), gan.Select(s => s.DistanceMeters));
+        Assert.True(gan.Count > 1);
+    }
+
+    [Fact]
+    public void Tram_gan_ton_trong_gioi_han_va_tra_rong_khi_xa()
+    {
+        Assert.Single(Catalog.Nearby(10.779948, 106.7064, radiusMeters: 500, limit: 1));
+        Assert.Empty(Catalog.Nearby(21.0285, 105.8542, radiusMeters: 5000, limit: 20)); // Hà Nội
+    }
+
+    [Fact]
     public void Tuyen_khong_ton_tai_tra_ve_null()
     {
         Assert.Null(Catalog.Route("khong-co"));

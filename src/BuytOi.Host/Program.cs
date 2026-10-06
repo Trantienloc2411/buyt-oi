@@ -4,6 +4,7 @@ using BuytOi.Catalog;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddOpenApi();
+builder.Services.AddProblemDetails(); // lỗi (kể cả tham số sai kiểu/thiếu) trả JSON ProblemDetails
 builder.Services.ConfigureHttpJsonOptions(o =>
 {
     o.SerializerOptions.Converters.Add(new JsonStringEnumConverter());
@@ -15,6 +16,7 @@ builder.Services.AddCatalog(builder.Configuration["Gtfs:Path"] ?? throw new Inva
 
 var app = builder.Build();
 
+app.UseStatusCodePages(); // response lỗi rỗng (vd. 400 do bind tham số) → ProblemDetails
 app.MapOpenApi();
 app.MapGet("/health", () => "ok");
 app.MapCatalog();
